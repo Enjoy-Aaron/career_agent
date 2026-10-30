@@ -1,0 +1,29 @@
+{
+  "major": "计算机科学与技术",
+  "semester": 3,
+  "target_family": "backend",
+  "weekly_hours": 8,
+  "path": "employment",
+  "mastered_skills": [
+    "concurrency",
+    "data_structure",
+    "git",
+    "java",
+    "jvm",
+    "oop",
+    "python",
+    "restful",
+    "spring_boot",
+    "unit_test"
+  ],
+  "pending_skills": [],
+  "skill_evidence": {
+    "java": "完成活动「Java 基础与面向对象强化」",
+    "oop": "完成活动「Java 基础与面向对象强化」",
+    "concurrency": "完成活动「Java 基础与面向对象强化」",
+    "jvm": "完成活动「Java 基础与面向对象强化」",
+    "spring_boot": "完成活动「Spring Boot 后端入门项目」",
+    "restful": "完成活动「Spring Boot 后端入门项目」",
+    "unit_test": "完成活动「Spring Boot 后端入门项目」"
+  }
+}

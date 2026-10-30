@@ -1,0 +1,2952 @@
+{
+  "extractions": [
+    {
+      "job_id": "J001",
+      "extracted_by": "mock",
+      "skills": [
+        {
+          "skill_id": "concurrency",
+          "name": "并发与多线程",
+          "category": "cs_foundation",
+          "requirement": "required",
+          "quotes": [
+            "3. 参与解决高并发、高可用场景下的技术难题，如分布式事务、缓存穿透、消息积压等",
+            "2. 语言基础：Java基础扎实，熟悉集合、并发包、I/O、JVM内存模型，具备良好的编码习惯"
+          ]
+        },
+        {
+          "skill_id": "jvm",
+          "name": "JVM 原理与调优",
+          "category": "cs_foundation",
+          "requirement": "required",
+          "quotes": [
+            "2. 语言基础：Java基础扎实，熟悉集合、并发包、I/O、JVM内存模型，具备良好的编码习惯",
+            "4. 对JVM调优、数据库性能优化有深入实践"
+          ]
+        },
+        {
+          "skill_id": "kafka",
+          "name": "Kafka",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "5. 中间件认知：熟悉Redis、RabbitMQ/Kafka等常用中间件，了解其适用场景及基本原理"
+          ]
+        },
+        {
+          "skill_id": "mysql",
+          "name": "MySQL",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "4. 数据库能力：熟悉MySQL，具备优秀的SQL编写能力，了解索引优化、锁机制及事务隔离级别"
+          ]
+        },
+        {
+          "skill_id": "rabbitmq",
+          "name": "RabbitMQ/RocketMQ",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "5. 中间件认知：熟悉Redis、RabbitMQ/Kafka等常用中间件，了解其适用场景及基本原理"
+          ]
+        },
+        {
+          "skill_id": "redis",
+          "name": "Redis",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "5. 中间件认知：熟悉Redis、RabbitMQ/Kafka等常用中间件，了解其适用场景及基本原理"
+          ]
+        },
+        {
+          "skill_id": "sql",
+          "name": "SQL 编写与调优",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "4. 数据库能力：熟悉MySQL，具备优秀的SQL编写能力，了解索引优化、锁机制及事务隔离级别"
+          ]
+        },
+        {
+          "skill_id": "linux",
+          "name": "Linux",
+          "category": "devops",
+          "requirement": "required",
+          "quotes": [
+            "3. 熟悉Linux环境，能编写Shell脚本"
+          ]
+        },
+        {
+          "skill_id": "java",
+          "name": "Java",
+          "category": "language",
+          "requirement": "required",
+          "quotes": [
+            "2. 语言基础：Java基础扎实，熟悉集合、并发包、I/O、JVM内存模型，具备良好的编码习惯"
+          ]
+        }
+      ],
+      "degree": {
+        "level": "bachelor_or_above",
+        "quote": "本科及以上"
+      },
+      "experience": {
+        "type": "experienced",
+        "quote": "2026年08月18日-2028年9月18日。岗位职责：1. 负责公司核心业务系统（如电商交易、供应链、金融风控等）的后端模块设计与开发；2. 负责高质量代码的编写、自测、Review及文档沉淀，确保系统的安全、稳定、高性能；3. 参与解决高并发、高可用场景下的技术难题，如分布式事务、缓存穿透、消息积压等；4. 结合业务需求，对现有系统进行性能调优和架构升级。任职要求（硬性门槛）：1. 学历背景：2026届本科及以上学历，计算机、软件工程、通信等相关专业；2. 语言基础：Java基础扎实，熟悉集合、并发包、I/O、JVM内存模型，具备良好的编码习惯；3. 框架技能：熟练使用Spring Boot/Spring Cloud框架，理解其核心设计思想（如IOC、AOP、自动装配）；4. 数据库能力：熟悉MySQL，具备优秀的SQL编写能力，了解索引优化、锁机制及事务隔离级别；5. 中间件认知：熟悉Redis、RabbitMQ/Kafka等常用中间件，了解其适用场景及基本原理。加分项（亮点收割机）：1. 有高并发/分布式项目实战经验"
+      }
+    },
+    {
+      "job_id": "J002",
+      "extracted_by": "mock",
+      "skills": [
+        {
+          "skill_id": "llm",
+          "name": "大语言模型 LLM",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "5.持续跟进技术演进与行业动态，参与主流框架及工具链学习与分享，掌握并应用大模型AI编程，主动提升个人全链路开发技能"
+          ]
+        },
+        {
+          "skill_id": "microservice",
+          "name": "微服务架构",
+          "category": "backend_framework",
+          "requirement": "required",
+          "quotes": [
+            "3.精通Java、Python、Go等至少一种主流编程语言，熟悉Spring Boot、Mybatis、Django等框架工具，熟悉Spring Cloud微服务，对计算机系统结构、网络、操作系统等专业知识具有扎实基础和深刻认知",
+            "5.有开源项目贡献，技术博客撰写，熟悉分布式系统设计或微服务架构，有国产操作系统、数据库、中间件等的开发经验者优先"
+          ]
+        },
+        {
+          "skill_id": "mybatis",
+          "name": "MyBatis",
+          "category": "backend_framework",
+          "requirement": "required",
+          "quotes": [
+            "3.精通Java、Python、Go等至少一种主流编程语言，熟悉Spring Boot、Mybatis、Django等框架工具，熟悉Spring Cloud微服务，对计算机系统结构、网络、操作系统等专业知识具有扎实基础和深刻认知"
+          ]
+        },
+        {
+          "skill_id": "computer_network",
+          "name": "计算机网络",
+          "category": "cs_foundation",
+          "requirement": "required",
+          "quotes": [
+            "3.精通Java、Python、Go等至少一种主流编程语言，熟悉Spring Boot、Mybatis、Django等框架工具，熟悉Spring Cloud微服务，对计算机系统结构、网络、操作系统等专业知识具有扎实基础和深刻认知"
+          ]
+        },
+        {
+          "skill_id": "computer_organization",
+          "name": "计算机组成原理",
+          "category": "cs_foundation",
+          "requirement": "required",
+          "quotes": [
+            "3.精通Java、Python、Go等至少一种主流编程语言，熟悉Spring Boot、Mybatis、Django等框架工具，熟悉Spring Cloud微服务，对计算机系统结构、网络、操作系统等专业知识具有扎实基础和深刻认知"
+          ]
+        },
+        {
+          "skill_id": "concurrency",
+          "name": "并发与多线程",
+          "category": "cs_foundation",
+          "requirement": "required",
+          "quotes": [
+            "3.负责系统性能优化，解决高并发场景下的技术瓶颈（如缓存、消息队列、数据库调优）保障系统高可用性与高稳定性"
+          ]
+        },
+        {
+          "skill_id": "operating_system",
+          "name": "操作系统",
+          "category": "cs_foundation",
+          "requirement": "required",
+          "quotes": [
+            "3.精通Java、Python、Go等至少一种主流编程语言，熟悉Spring Boot、Mybatis、Django等框架工具，熟悉Spring Cloud微服务，对计算机系统结构、网络、操作系统等专业知识具有扎实基础和深刻认知",
+            "4.熟悉Linux、Unix等操作系统命令，能进行应用部署与问题排查"
+          ]
+        },
+        {
+          "skill_id": "mysql",
+          "name": "MySQL",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "熟悉MySQL、Oracle数据库与redis缓存，能编写高效的SQL并进行调优"
+          ]
+        },
+        {
+          "skill_id": "oracle",
+          "name": "Oracle",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "熟悉MySQL、Oracle数据库与redis缓存，能编写高效的SQL并进行调优"
+          ]
+        },
+        {
+          "skill_id": "rabbitmq",
+          "name": "RabbitMQ/RocketMQ",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "3.负责系统性能优化，解决高并发场景下的技术瓶颈（如缓存、消息队列、数据库调优）保障系统高可用性与高稳定性"
+          ]
+        },
+        {
+          "skill_id": "redis",
+          "name": "Redis",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "熟悉MySQL、Oracle数据库与redis缓存，能编写高效的SQL并进行调优"
+          ]
+        },
+        {
+          "skill_id": "sql",
+          "name": "SQL 编写与调优",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "熟悉MySQL、Oracle数据库与redis缓存，能编写高效的SQL并进行调优"
+          ]
+        },
+        {
+          "skill_id": "docker",
+          "name": "Docker 容器",
+          "category": "devops",
+          "requirement": "bonus",
+          "quotes": [
+            "了解Docker、kubernetes，以有实操经验为佳"
+          ]
+        },
+        {
+          "skill_id": "git",
+          "name": "Git 版本管理",
+          "category": "devops",
+          "requirement": "required",
+          "quotes": [
+            "了解Git等版本管理工具，具备良好的代码规范意识"
+          ]
+        },
+        {
+          "skill_id": "kubernetes",
+          "name": "Kubernetes",
+          "category": "devops",
+          "requirement": "bonus",
+          "quotes": [
+            "了解Docker、kubernetes，以有实操经验为佳"
+          ]
+        },
+        {
+          "skill_id": "linux",
+          "name": "Linux",
+          "category": "devops",
+          "requirement": "required",
+          "quotes": [
+            "4.熟悉Linux、Unix等操作系统命令，能进行应用部署与问题排查"
+          ]
+        },
+        {
+          "skill_id": "go",
+          "name": "Go",
+          "category": "language",
+          "requirement": "required",
+          "quotes": [
+            "3.精通Java、Python、Go等至少一种主流编程语言，熟悉Spring Boot、Mybatis、Django等框架工具，熟悉Spring Cloud微服务，对计算机系统结构、网络、操作系统等专业知识具有扎实基础和深刻认知"
+          ]
+        },
+        {
+          "skill_id": "java",
+          "name": "Java",
+          "category": "language",
+          "requirement": "required",
+          "quotes": [
+            "3.精通Java、Python、Go等至少一种主流编程语言，熟悉Spring Boot、Mybatis、Django等框架工具，熟悉Spring Cloud微服务，对计算机系统结构、网络、操作系统等专业知识具有扎实基础和深刻认知"
+          ]
+        },
+        {
+          "skill_id": "python",
+          "name": "Python",
+          "category": "language",
+          "requirement": "required",
+          "quotes": [
+            "3.精通Java、Python、Go等至少一种主流编程语言，熟悉Spring Boot、Mybatis、Django等框架工具，熟悉Spring Cloud微服务，对计算机系统结构、网络、操作系统等专业知识具有扎实基础和深刻认知"
+          ]
+        },
+        {
+          "skill_id": "communication",
+          "name": "沟通协作",
+          "category": "soft_skill",
+          "requirement": "required",
+          "quotes": [
+            "6.自驱进取、爱岗敬业、踏实负责、严谨细致，具备良好的系统性逻辑思维，具有良好的理解和学习能力、问题分析和解决能力、团队合作和沟通协调能力、情绪调节和压力管理能力"
+          ]
+        },
+        {
+          "skill_id": "english",
+          "name": "英语能力",
+          "category": "soft_skill",
+          "requirement": "bonus",
+          "quotes": [
+            "2.在校平均学分绩点3.0及以上，CET4同等及以上英语水平，有科研论文发表、竞赛获奖、IT/AI后端研发相关实习实践经历者优先"
+          ]
+        },
+        {
+          "skill_id": "problem_solving",
+          "name": "问题分析与解决",
+          "category": "soft_skill",
+          "requirement": "required",
+          "quotes": [
+            "6.自驱进取、爱岗敬业、踏实负责、严谨细致，具备良好的系统性逻辑思维，具有良好的理解和学习能力、问题分析和解决能力、团队合作和沟通协调能力、情绪调节和压力管理能力"
+          ]
+        },
+        {
+          "skill_id": "responsibility",
+          "name": "责任心与抗压",
+          "category": "soft_skill",
+          "requirement": "required",
+          "quotes": [
+            "6.自驱进取、爱岗敬业、踏实负责、严谨细致，具备良好的系统性逻辑思维，具有良好的理解和学习能力、问题分析和解决能力、团队合作和沟通协调能力、情绪调节和压力管理能力"
+          ]
+        },
+        {
+          "skill_id": "self_driven",
+          "name": "自驱与学习能力",
+          "category": "soft_skill",
+          "requirement": "required",
+          "quotes": [
+            "6.自驱进取、爱岗敬业、踏实负责、严谨细致，具备良好的系统性逻辑思维，具有良好的理解和学习能力、问题分析和解决能力、团队合作和沟通协调能力、情绪调节和压力管理能力"
+          ]
+        }
+      ],
+      "degree": {
+        "level": "bachelor_or_above",
+        "quote": "本科及以上"
+      },
+      "experience": {
+        "type": "campus",
+        "quote": "应届"
+      }
+    },
+    {
+      "job_id": "J003",
+      "extracted_by": "mock",
+      "skills": [
+        {
+          "skill_id": "microservice",
+          "name": "微服务架构",
+          "category": "backend_framework",
+          "requirement": "required",
+          "quotes": [
+            "2、热爱编程，基础扎实，熟悉Java/Rust等语言核心概念，如面向对象编程、集合框架、多线程编程及分布式系统架构等"
+          ]
+        },
+        {
+          "skill_id": "spring_boot",
+          "name": "Spring Boot",
+          "category": "backend_framework",
+          "requirement": "bonus",
+          "quotes": [
+            "4、有Java/Rust项目研发经验，有Spring、SpringBoot等主流开发框架使用经验优先"
+          ]
+        },
+        {
+          "skill_id": "concurrency",
+          "name": "并发与多线程",
+          "category": "cs_foundation",
+          "requirement": "required",
+          "quotes": [
+            "2、热爱编程，基础扎实，熟悉Java/Rust等语言核心概念，如面向对象编程、集合框架、多线程编程及分布式系统架构等"
+          ]
+        },
+        {
+          "skill_id": "oop",
+          "name": "面向对象编程",
+          "category": "cs_foundation",
+          "requirement": "required",
+          "quotes": [
+            "2、热爱编程，基础扎实，熟悉Java/Rust等语言核心概念，如面向对象编程、集合框架、多线程编程及分布式系统架构等"
+          ]
+        },
+        {
+          "skill_id": "kafka",
+          "name": "Kafka",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "3、熟悉至少一种关系型数据库（如MySQL）的基本使用和SQL语言，了解Redis等缓存技术或常用消息队列（如Kafka, RabbitMQ）"
+          ]
+        },
+        {
+          "skill_id": "mysql",
+          "name": "MySQL",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "3、熟悉至少一种关系型数据库（如MySQL）的基本使用和SQL语言，了解Redis等缓存技术或常用消息队列（如Kafka, RabbitMQ）"
+          ]
+        },
+        {
+          "skill_id": "rabbitmq",
+          "name": "RabbitMQ/RocketMQ",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "3、熟悉至少一种关系型数据库（如MySQL）的基本使用和SQL语言，了解Redis等缓存技术或常用消息队列（如Kafka, RabbitMQ）"
+          ]
+        },
+        {
+          "skill_id": "redis",
+          "name": "Redis",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "3、熟悉至少一种关系型数据库（如MySQL）的基本使用和SQL语言，了解Redis等缓存技术或常用消息队列（如Kafka, RabbitMQ）"
+          ]
+        },
+        {
+          "skill_id": "sql",
+          "name": "SQL 编写与调优",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "3、熟悉至少一种关系型数据库（如MySQL）的基本使用和SQL语言，了解Redis等缓存技术或常用消息队列（如Kafka, RabbitMQ）"
+          ]
+        },
+        {
+          "skill_id": "unit_test",
+          "name": "单元测试",
+          "category": "devops",
+          "requirement": "required",
+          "quotes": [
+            "3、按时完成开发任务，并通过单元测试、接口测试等手段保障代码质量"
+          ]
+        },
+        {
+          "skill_id": "java",
+          "name": "Java",
+          "category": "language",
+          "requirement": "required",
+          "quotes": [
+            "2、热爱编程，基础扎实，熟悉Java/Rust等语言核心概念，如面向对象编程、集合框架、多线程编程及分布式系统架构等",
+            "4、有Java/Rust项目研发经验，有Spring、SpringBoot等主流开发框架使用经验优先"
+          ]
+        },
+        {
+          "skill_id": "rust",
+          "name": "Rust",
+          "category": "language",
+          "requirement": "required",
+          "quotes": [
+            "2、热爱编程，基础扎实，熟悉Java/Rust等语言核心概念，如面向对象编程、集合框架、多线程编程及分布式系统架构等",
+            "4、有Java/Rust项目研发经验，有Spring、SpringBoot等主流开发框架使用经验优先"
+          ]
+        }
+      ],
+      "degree": {
+        "level": "bachelor_or_above",
+        "quote": "本科及以上"
+      },
+      "experience": {
+        "type": "campus",
+        "quote": "应届"
+      }
+    },
+    {
+      "job_id": "J004",
+      "extracted_by": "mock",
+      "skills": [
+        {
+          "skill_id": "restful",
+          "name": "RESTful API 设计",
+          "category": "backend_framework",
+          "requirement": "required",
+          "quotes": [
+            "了解 RESTful API 设计规范"
+          ]
+        },
+        {
+          "skill_id": "kafka",
+          "name": "Kafka",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "了解 Redis、Kafka、MQ 等中间件的基本概念及使用场景"
+          ]
+        },
+        {
+          "skill_id": "mysql",
+          "name": "MySQL",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "4. 熟悉 MySQL 或 PostgreSQL 数据库的基本操作及SQL编写"
+          ]
+        },
+        {
+          "skill_id": "postgresql",
+          "name": "PostgreSQL",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "4. 熟悉 MySQL 或 PostgreSQL 数据库的基本操作及SQL编写"
+          ]
+        },
+        {
+          "skill_id": "redis",
+          "name": "Redis",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "了解 Redis、Kafka、MQ 等中间件的基本概念及使用场景"
+          ]
+        },
+        {
+          "skill_id": "sql",
+          "name": "SQL 编写与调优",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "4. 熟悉 MySQL 或 PostgreSQL 数据库的基本操作及SQL编写"
+          ]
+        },
+        {
+          "skill_id": "docker",
+          "name": "Docker 容器",
+          "category": "devops",
+          "requirement": "required",
+          "quotes": [
+            "5. 工程化与部署：了解 Linux 常用命令，了解 Docker 容器化基本概念"
+          ]
+        },
+        {
+          "skill_id": "linux",
+          "name": "Linux",
+          "category": "devops",
+          "requirement": "required",
+          "quotes": [
+            "5. 工程化与部署：了解 Linux 常用命令，了解 Docker 容器化基本概念"
+          ]
+        },
+        {
+          "skill_id": "unit_test",
+          "name": "单元测试",
+          "category": "devops",
+          "requirement": "required",
+          "quotes": [
+            "2. 功能实现与问题排查：协助完成需求分析、详细设计、编码及单元测试工作"
+          ]
+        },
+        {
+          "skill_id": "java",
+          "name": "Java",
+          "category": "language",
+          "requirement": "required",
+          "quotes": [
+            "岗位职责：1. 参与系统开发与迭代：在导师指导下，后端接口开发（Java/Spring Boot）及前端页面实现（Vue/HTML/JS），确保代码质量",
+            "2. 熟练掌握 Java 编程语言，了解 Spring Boot、Spring Cloud 等主流后端框架的基本使用"
+          ]
+        },
+        {
+          "skill_id": "communication",
+          "name": "沟通协作",
+          "category": "soft_skill",
+          "requirement": "required",
+          "quotes": [
+            "4. 团队协作与沟通：紧密配合产品经理、测试及运维团队，参与需求评审，理解业务逻辑，确保功能按时高质量交付"
+          ]
+        },
+        {
+          "skill_id": "problem_solving",
+          "name": "问题分析与解决",
+          "category": "soft_skill",
+          "requirement": "required",
+          "quotes": [
+            "7. 综合素质：具备良好的逻辑思维能力和代码规范意识"
+          ]
+        }
+      ],
+      "degree": {
+        "level": "bachelor_or_above",
+        "quote": "本科及以上"
+      },
+      "experience": {
+        "type": "campus",
+        "quote": "校招岗位（未明确年限）"
+      }
+    },
+    {
+      "job_id": "J005",
+      "extracted_by": "mock",
+      "skills": [
+        {
+          "skill_id": "microservice",
+          "name": "微服务架构",
+          "category": "backend_framework",
+          "requirement": "bonus",
+          "quotes": [
+            "加分项（优先录用）：1、了解SpringCloud、微服务、Redis、MQ（RabbitMQ/RocketMQ）"
+          ]
+        },
+        {
+          "skill_id": "restful",
+          "name": "RESTful API 设计",
+          "category": "backend_framework",
+          "requirement": "required",
+          "quotes": [
+            "2、接口开发与联调：编写RESTful接口，配合前端、实施、第三方系统进行接口联调，保证数据交互正常"
+          ]
+        },
+        {
+          "skill_id": "spring_boot",
+          "name": "Spring Boot",
+          "category": "backend_framework",
+          "requirement": "required",
+          "quotes": [
+            "岗位要求：1、业务功能开发：根据产品需求、接口文档，参与后端业务模块编码开发，使用Java及SpringBoot/SpringCloud等主流框架完成功能实现",
+            "熟悉Spring/SpringBoot框架，了解MVC开发模式"
+          ]
+        },
+        {
+          "skill_id": "spring_cloud",
+          "name": "Spring Cloud",
+          "category": "backend_framework",
+          "requirement": "required",
+          "quotes": [
+            "岗位要求：1、业务功能开发：根据产品需求、接口文档，参与后端业务模块编码开发，使用Java及SpringBoot/SpringCloud等主流框架完成功能实现",
+            "加分项（优先录用）：1、了解SpringCloud、微服务、Redis、MQ（RabbitMQ/RocketMQ）"
+          ]
+        },
+        {
+          "skill_id": "computer_network",
+          "name": "计算机网络",
+          "category": "cs_foundation",
+          "requirement": "required",
+          "quotes": [
+            "3、具备基础计算机基础：计算机网络（HTTP/HTTPS、TCP）、操作系统基础"
+          ]
+        },
+        {
+          "skill_id": "concurrency",
+          "name": "并发与多线程",
+          "category": "cs_foundation",
+          "requirement": "required",
+          "quotes": [
+            "2、基础必备：扎实Java基础：面向对象、集合、IO、多线程、异常、JVM基础原理"
+          ]
+        },
+        {
+          "skill_id": "jvm",
+          "name": "JVM 原理与调优",
+          "category": "cs_foundation",
+          "requirement": "required",
+          "quotes": [
+            "2、基础必备：扎实Java基础：面向对象、集合、IO、多线程、异常、JVM基础原理"
+          ]
+        },
+        {
+          "skill_id": "oop",
+          "name": "面向对象编程",
+          "category": "cs_foundation",
+          "requirement": "required",
+          "quotes": [
+            "2、基础必备：扎实Java基础：面向对象、集合、IO、多线程、异常、JVM基础原理"
+          ]
+        },
+        {
+          "skill_id": "operating_system",
+          "name": "操作系统",
+          "category": "cs_foundation",
+          "requirement": "required",
+          "quotes": [
+            "3、具备基础计算机基础：计算机网络（HTTP/HTTPS、TCP）、操作系统基础"
+          ]
+        },
+        {
+          "skill_id": "mysql",
+          "name": "MySQL",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "掌握MySQL，熟练基础SQL，了解索引、事务基础概念"
+          ]
+        },
+        {
+          "skill_id": "rabbitmq",
+          "name": "RabbitMQ/RocketMQ",
+          "category": "data_storage",
+          "requirement": "bonus",
+          "quotes": [
+            "加分项（优先录用）：1、了解SpringCloud、微服务、Redis、MQ（RabbitMQ/RocketMQ）"
+          ]
+        },
+        {
+          "skill_id": "redis",
+          "name": "Redis",
+          "category": "data_storage",
+          "requirement": "bonus",
+          "quotes": [
+            "加分项（优先录用）：1、了解SpringCloud、微服务、Redis、MQ（RabbitMQ/RocketMQ）"
+          ]
+        },
+        {
+          "skill_id": "sql",
+          "name": "SQL 编写与调优",
+          "category": "data_storage",
+          "requirement": "required",
+          "quotes": [
+            "3、数据库开发：编写SQL语句，设计简单数据表结构，优化基础查询，完成数据新增、查询、修改、删除相关开发",
+            "掌握MySQL，熟练基础SQL，了解索引、事务基础概念"
+          ]
+        },
+        {
+          "skill_id": "git",
+          "name": "Git 版本管理",
+          "category": "devops",
+          "requirement": "required",
+          "quotes": [
+            "6、代码提交与版本管理：使用Git进行代码管理，遵守团队代码规范，完成代码评审整改",
+            "掌握Git版本管理工具，了解Maven/Gradle"
+          ]
+        },
+        {
+          "skill_id": "linux",
+          "name": "Linux",
+          "category": "devops",
+          "requirement": "required",
+          "quotes": [
+            "3、了解Linux基础命令，能部署简单Java服务"
+          ]
+        },
+        {
+          "skill_id": "maven_gradle",
+          "name": "Maven/Gradle",
+          "category": "devops",
+          "requirement": "required",
+          "quotes": [
+            "掌握Git版本管理工具，了解Maven/Gradle"
+          ]
+        },
+        {
+          "skill_id": "unit_test",
+          "name": "单元测试",
+          "category": "devops",
+          "requirement": "required",
+          "quotes": [
+            "4、单元测试与缺陷修复：编写单元测试，自测代码"
+          ]
+        },
+        {
+          "skill_id": "java",
+          "name": "Java",
+          "category": "language",
+          "requirement": "required",
+          "quotes": [
+            "岗位要求：1、业务功能开发：根据产品需求、接口文档，参与后端业务模块编码开发，使用Java及SpringBoot/SpringCloud等主流框架完成功能实现",
+            "2、基础必备：扎实Java基础：面向对象、集合、IO、多线程、异常、JVM基础原理"
+          ]
+        },
+        {
+          "skill_id": "communication",
+          "name": "沟通协作",
+          "category": "soft_skill",
+          "requirement": "required",
+          "quotes": [
+            "3、沟通顺畅，能和产品、测试、实施对齐需求",
+            "4、责任心强，有团队协作意识，能配合项目迭代节奏"
+          ]
+        },
+        {
+          "skill_id": "problem_solving",
+          "name": "问题分析与解决",
+          "category": "soft_skill",
+          "requirement": "required",
+          "quotes": [
+            "2、逻辑思维清晰，具备良好学习能力，愿意学习新技术"
+          ]
+        },
+        {
+          "skill_id": "responsibility",
+          "name": "责任心与抗压",
+          "category": "soft_skill",
+          "requirement": "required",
+          "quotes": [
+            "4、责任心强，有团队协作意识，能配合项目迭代节奏"
+          ]
+        },
+        {
+          "skill_id": "self_driven",
+          "name": "自驱与学习能力",
+          "category": "soft_skill",
+          "requirement": "required",
+          "quotes": [
+            "2、逻辑思维清晰，具备良好学习能力，愿意学习新技术"
+          ]
+        }
+      ],
+      "degree": {
+        "level": "bachelor_or_above",
+        "quote": "本科及以上"
+      },
+      "experience": {
+        "type": "campus",
+        "quote": "校招岗位（未明确年限）"
+      }
+    },
+    {
+      "job_id": "J006",
+      "extracted_by": "mock",
+      "skills": [
+        {
+          "skill_id": "deep_learning",
+          "name": "深度学习",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "2、扎实的编码能力（Python/C++），熟悉深度学习框架（PyTorch），了解模型工程化工具（vLLM/TensorRT/LoRA等）",
+            "3、掌握机器学习与深度学习基础（Transformer、分类/聚类/排序模型），有大模型预训练、微调或RAG项目经验者优先"
+          ]
+        },
+        {
+          "skill_id": "feature_engineering",
+          "name": "特征工程",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "3、数据与特征工程：处理多源数据，构建特征库与画像标签，搭建数据闭环，持续提升模型质量"
+          ]
+        },
+        {
+          "skill_id": "fine_tuning",
+          "name": "模型微调 SFT/LoRA",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "一、岗位职责：1、算法研发与优化：参与NLP/推荐系统/大模型应用场景的模型设计与训练，完成微调、调优及部署支持",
+            "4、技术跟踪与应用：跟进大模型前沿技术（SFT/RLHF、RAG、Agent等），参与技术选型与预研，输出验证报告"
+          ]
+        },
+        {
+          "skill_id": "llm",
+          "name": "大语言模型 LLM",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "一、岗位职责：1、算法研发与优化：参与NLP/推荐系统/大模型应用场景的模型设计与训练，完成微调、调优及部署支持",
+            "4、技术跟踪与应用：跟进大模型前沿技术（SFT/RLHF、RAG、Agent等），参与技术选型与预研，输出验证报告"
+          ]
+        },
+        {
+          "skill_id": "machine_learning",
+          "name": "机器学习",
+          "category": "ai",
+          "requirement": "bonus",
+          "quotes": [
+            "3、掌握机器学习与深度学习基础（Transformer、分类/聚类/排序模型），有大模型预训练、微调或RAG项目经验者优先"
+          ]
+        },
+        {
+          "skill_id": "math_foundation",
+          "name": "数学基础（概率/线代/优化）",
+          "category": "ai",
+          "requirement": "bonus",
+          "quotes": [
+            "4、数学功底扎实，具备优秀的问题抽象与工程落地能力，有顶会论文或竞赛获奖者优先"
+          ]
+        },
+        {
+          "skill_id": "model_inference",
+          "name": "模型推理与工程化",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "2、模型工程化：负责模型从实验到生产的全链路工程化，包括数据处理、训练评估、推理服务部署与效果监控"
+          ]
+        },
+        {
+          "skill_id": "nlp",
+          "name": "自然语言处理 NLP",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "一、岗位职责：1、算法研发与优化：参与NLP/推荐系统/大模型应用场景的模型设计与训练，完成微调、调优及部署支持"
+          ]
+        },
+        {
+          "skill_id": "pytorch",
+          "name": "PyTorch",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "2、扎实的编码能力（Python/C++），熟悉深度学习框架（PyTorch），了解模型工程化工具（vLLM/TensorRT/LoRA等）"
+          ]
+        },
+        {
+          "skill_id": "rag",
+          "name": "RAG 检索增强",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "4、技术跟踪与应用：跟进大模型前沿技术（SFT/RLHF、RAG、Agent等），参与技术选型与预研，输出验证报告",
+            "3、掌握机器学习与深度学习基础（Transformer、分类/聚类/排序模型），有大模型预训练、微调或RAG项目经验者优先"
+          ]
+        },
+        {
+          "skill_id": "recommendation",
+          "name": "推荐系统",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "一、岗位职责：1、算法研发与优化：参与NLP/推荐系统/大模型应用场景的模型设计与训练，完成微调、调优及部署支持",
+            "3、掌握机器学习与深度学习基础（Transformer、分类/聚类/排序模型），有大模型预训练、微调或RAG项目经验者优先"
+          ]
+        },
+        {
+          "skill_id": "transformer",
+          "name": "Transformer 架构",
+          "category": "ai",
+          "requirement": "bonus",
+          "quotes": [
+            "3、掌握机器学习与深度学习基础（Transformer、分类/聚类/排序模型），有大模型预训练、微调或RAG项目经验者优先"
+          ]
+        },
+        {
+          "skill_id": "python",
+          "name": "Python",
+          "category": "language",
+          "requirement": "required",
+          "quotes": [
+            "2、扎实的编码能力（Python/C++），熟悉深度学习框架（PyTorch），了解模型工程化工具（vLLM/TensorRT/LoRA等）"
+          ]
+        },
+        {
+          "skill_id": "communication",
+          "name": "沟通协作",
+          "category": "soft_skill",
+          "requirement": "required",
+          "quotes": [
+            "5、学习能力强，跨部门沟通积极主动，具备团队意识"
+          ]
+        },
+        {
+          "skill_id": "problem_solving",
+          "name": "问题分析与解决",
+          "category": "soft_skill",
+          "requirement": "bonus",
+          "quotes": [
+            "4、数学功底扎实，具备优秀的问题抽象与工程落地能力，有顶会论文或竞赛获奖者优先"
+          ]
+        },
+        {
+          "skill_id": "self_driven",
+          "name": "自驱与学习能力",
+          "category": "soft_skill",
+          "requirement": "required",
+          "quotes": [
+            "5、学习能力强，跨部门沟通积极主动，具备团队意识"
+          ]
+        }
+      ],
+      "degree": {
+        "level": "bachelor_or_above",
+        "quote": "本科及以上"
+      },
+      "experience": {
+        "type": "campus",
+        "quote": "应届"
+      }
+    },
+    {
+      "job_id": "J007",
+      "extracted_by": "mock",
+      "skills": [
+        {
+          "skill_id": "computer_vision",
+          "name": "计算机视觉 CV",
+          "category": "ai",
+          "requirement": "bonus",
+          "quotes": [
+            "加分项：1、熟悉常见的 CV、NLP 模型，如 ViT、GPT 等"
+          ]
+        },
+        {
+          "skill_id": "deep_learning",
+          "name": "深度学习",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "3、熟悉一种或多种深度学习框架，如 PyTorch"
+          ]
+        },
+        {
+          "skill_id": "distributed_training",
+          "name": "分布式训练",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "工作职责：1、参与开发和建设公司的训练、微调、评估、推理工具链，支撑公司 AI 模型的分布式训练和推理应用",
+            "2、参与公司内分布式训练和推理任务优化，包括但不限于框架优化、算子优化、通信优化和存储优化等"
+          ]
+        },
+        {
+          "skill_id": "fine_tuning",
+          "name": "模型微调 SFT/LoRA",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "工作职责：1、参与开发和建设公司的训练、微调、评估、推理工具链，支撑公司 AI 模型的分布式训练和推理应用",
+            "4、跟进和探索前沿的分布式训练、微调、评估和推理技术方案，推动相应工具的不断迭代"
+          ]
+        },
+        {
+          "skill_id": "nlp",
+          "name": "自然语言处理 NLP",
+          "category": "ai",
+          "requirement": "bonus",
+          "quotes": [
+            "加分项：1、熟悉常见的 CV、NLP 模型，如 ViT、GPT 等"
+          ]
+        },
+        {
+          "skill_id": "pytorch",
+          "name": "PyTorch",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "3、熟悉一种或多种深度学习框架，如 PyTorch"
+          ]
+        },
+        {
+          "skill_id": "computer_network",
+          "name": "计算机网络",
+          "category": "cs_foundation",
+          "requirement": "required",
+          "quotes": [
+            "2、掌握计算机专业基础知识，如计算机操作系统、计算机网络、计算机组成原理等"
+          ]
+        },
+        {
+          "skill_id": "computer_organization",
+          "name": "计算机组成原理",
+          "category": "cs_foundation",
+          "requirement": "required",
+          "quotes": [
+            "2、掌握计算机专业基础知识，如计算机操作系统、计算机网络、计算机组成原理等"
+          ]
+        },
+        {
+          "skill_id": "data_structure",
+          "name": "数据结构与算法",
+          "category": "cs_foundation",
+          "requirement": "required",
+          "quotes": [
+            "3、掌握常见的数据结构和算法，编程能力良好，能够利用计算机程序解决实际的问题"
+          ]
+        },
+        {
+          "skill_id": "operating_system",
+          "name": "操作系统",
+          "category": "cs_foundation",
+          "requirement": "required",
+          "quotes": [
+            "2、掌握计算机专业基础知识，如计算机操作系统、计算机网络、计算机组成原理等"
+          ]
+        },
+        {
+          "skill_id": "communication",
+          "name": "沟通协作",
+          "category": "soft_skill",
+          "requirement": "required",
+          "quotes": [
+            "4、具有良好的团队合作精神，能够与跨部门的团队紧密合作，共同推动项目的成功"
+          ]
+        },
+        {
+          "skill_id": "self_driven",
+          "name": "自驱与学习能力",
+          "category": "soft_skill",
+          "requirement": "required",
+          "quotes": [
+            "5、具备较强的自我驱动力和学习能力，并乐于不断尝试、追求业务突破"
+          ]
+        }
+      ],
+      "degree": {
+        "level": "bachelor_or_above",
+        "quote": "本科及以上"
+      },
+      "experience": {
+        "type": "campus",
+        "quote": "应届"
+      }
+    },
+    {
+      "job_id": "J008",
+      "extracted_by": "mock",
+      "skills": [
+        {
+          "skill_id": "computer_vision",
+          "name": "计算机视觉 CV",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "岗位职责：1.研究和开发机器学习、深度学习、计算机视觉等领域的核心算法，并将其应用于真实业务场景",
+            "2.针对具体业务场景（如CBCT三维重建、口扫数据分析、手术导航）进行算法选型、建模、训练和迭代优化"
+          ]
+        },
+        {
+          "skill_id": "deep_learning",
+          "name": "深度学习",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "岗位职责：1.研究和开发机器学习、深度学习、计算机视觉等领域的核心算法，并将其应用于真实业务场景"
+          ]
+        },
+        {
+          "skill_id": "machine_learning",
+          "name": "机器学习",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "岗位职责：1.研究和开发机器学习、深度学习、计算机视觉等领域的核心算法，并将其应用于真实业务场景"
+          ]
+        },
+        {
+          "skill_id": "math_foundation",
+          "name": "数学基础（概率/线代/优化）",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "理论基础：扎实的数学功底，精通概率论、线性代数、最优化理论、数值分析等"
+          ]
+        },
+        {
+          "skill_id": "pytorch",
+          "name": "PyTorch",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "熟练掌握Python，有使用PyTorch、TensorFlow等框架的项目经验"
+          ]
+        },
+        {
+          "skill_id": "tensorflow",
+          "name": "TensorFlow",
+          "category": "ai",
+          "requirement": "required",
+          "quotes": [
+            "熟练掌握Python，有使用PyTorch、TensorFlow等框架的项目经验"
+          ]
+        },
+        {
+          "skill_id": "python",
+          "name": "Python",
+          "category": "language",
+          "requirement": "required",
+          "quotes": [
+            "熟练掌握Python，有使用PyTorch、TensorFlow等框架的项目经验"
+          ]
+        },
+        {
+          "skill_id": "problem_solving",
+          "name": "问题分析与解决",
+          "category": "soft_skill",
+          "requirement": "required",
+          "quotes": [
+            "综合素养：具备优秀的分析问题和解决问题的能力，对攻克技术难题有强烈的求知欲和成就感"
+          ]
+        }
+      ],
+      "degree": {
+        "level": "master_or_above",
+        "quote": "硕士及以上"
+      },
+      "experience": {
+        "type": "campus",
+        "quote": "校招岗位（未明确年限）"
+      }
+    }
+  ],
+  "aggregate": {
+    "families": [
+      {
+        "family": "backend",
+        "job_ids": [
+          "J001",
+          "J002",
+          "J003",
+          "J004",
+          "J005"
+        ],
+        "job_count": 5,
+        "skills": [
+          {
+            "skill_id": "java",
+            "name": "Java",
+            "category": "language",
+            "required_count": 5,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J001",
+                "company": "网易",
+                "requirement": "required",
+                "quotes": [
+                  "2. 语言基础：Java基础扎实，熟悉集合、并发包、I/O、JVM内存模型，具备良好的编码习惯"
+                ],
+                "source_url": "https://mnowpick.nowcoder.com/m/detail/index?jobId=461869"
+              },
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "3.精通Java、Python、Go等至少一种主流编程语言，熟悉Spring Boot、Mybatis、Django等框架工具，熟悉Spring Cloud微服务，对计算机系统结构、网络、操作系统等专业知识具有扎实基础和深刻认知"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              },
+              {
+                "job_id": "J003",
+                "company": "小米",
+                "requirement": "required",
+                "quotes": [
+                  "2、热爱编程，基础扎实，熟悉Java/Rust等语言核心概念，如面向对象编程、集合框架、多线程编程及分布式系统架构等",
+                  "4、有Java/Rust项目研发经验，有Spring、SpringBoot等主流开发框架使用经验优先"
+                ],
+                "source_url": "https://xiaomi.jobs.f.mioffice.cn/campus/m/position/7670923491005335850/detail?spread=J7NS6YR"
+              },
+              {
+                "job_id": "J004",
+                "company": "平安科技（平安集团）",
+                "requirement": "required",
+                "quotes": [
+                  "岗位职责：1. 参与系统开发与迭代：在导师指导下，后端接口开发（Java/Spring Boot）及前端页面实现（Vue/HTML/JS），确保代码质量",
+                  "2. 熟练掌握 Java 编程语言，了解 Spring Boot、Spring Cloud 等主流后端框架的基本使用"
+                ],
+                "source_url": "https://campus.pingan.com/positionDetail?positionId=e2ff033ca39b30e0bed494c8660fad10"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "required",
+                "quotes": [
+                  "岗位要求：1、业务功能开发：根据产品需求、接口文档，参与后端业务模块编码开发，使用Java及SpringBoot/SpringCloud等主流框架完成功能实现",
+                  "2、基础必备：扎实Java基础：面向对象、集合、IO、多线程、异常、JVM基础原理"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 1.0,
+            "bonus_freq": 0.0,
+            "mention_freq": 1.0
+          },
+          {
+            "skill_id": "mysql",
+            "name": "MySQL",
+            "category": "data_storage",
+            "required_count": 5,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J001",
+                "company": "网易",
+                "requirement": "required",
+                "quotes": [
+                  "4. 数据库能力：熟悉MySQL，具备优秀的SQL编写能力，了解索引优化、锁机制及事务隔离级别"
+                ],
+                "source_url": "https://mnowpick.nowcoder.com/m/detail/index?jobId=461869"
+              },
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "熟悉MySQL、Oracle数据库与redis缓存，能编写高效的SQL并进行调优"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              },
+              {
+                "job_id": "J003",
+                "company": "小米",
+                "requirement": "required",
+                "quotes": [
+                  "3、熟悉至少一种关系型数据库（如MySQL）的基本使用和SQL语言，了解Redis等缓存技术或常用消息队列（如Kafka, RabbitMQ）"
+                ],
+                "source_url": "https://xiaomi.jobs.f.mioffice.cn/campus/m/position/7670923491005335850/detail?spread=J7NS6YR"
+              },
+              {
+                "job_id": "J004",
+                "company": "平安科技（平安集团）",
+                "requirement": "required",
+                "quotes": [
+                  "4. 熟悉 MySQL 或 PostgreSQL 数据库的基本操作及SQL编写"
+                ],
+                "source_url": "https://campus.pingan.com/positionDetail?positionId=e2ff033ca39b30e0bed494c8660fad10"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "required",
+                "quotes": [
+                  "掌握MySQL，熟练基础SQL，了解索引、事务基础概念"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 1.0,
+            "bonus_freq": 0.0,
+            "mention_freq": 1.0
+          },
+          {
+            "skill_id": "sql",
+            "name": "SQL 编写与调优",
+            "category": "data_storage",
+            "required_count": 5,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J001",
+                "company": "网易",
+                "requirement": "required",
+                "quotes": [
+                  "4. 数据库能力：熟悉MySQL，具备优秀的SQL编写能力，了解索引优化、锁机制及事务隔离级别"
+                ],
+                "source_url": "https://mnowpick.nowcoder.com/m/detail/index?jobId=461869"
+              },
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "熟悉MySQL、Oracle数据库与redis缓存，能编写高效的SQL并进行调优"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              },
+              {
+                "job_id": "J003",
+                "company": "小米",
+                "requirement": "required",
+                "quotes": [
+                  "3、熟悉至少一种关系型数据库（如MySQL）的基本使用和SQL语言，了解Redis等缓存技术或常用消息队列（如Kafka, RabbitMQ）"
+                ],
+                "source_url": "https://xiaomi.jobs.f.mioffice.cn/campus/m/position/7670923491005335850/detail?spread=J7NS6YR"
+              },
+              {
+                "job_id": "J004",
+                "company": "平安科技（平安集团）",
+                "requirement": "required",
+                "quotes": [
+                  "4. 熟悉 MySQL 或 PostgreSQL 数据库的基本操作及SQL编写"
+                ],
+                "source_url": "https://campus.pingan.com/positionDetail?positionId=e2ff033ca39b30e0bed494c8660fad10"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "required",
+                "quotes": [
+                  "3、数据库开发：编写SQL语句，设计简单数据表结构，优化基础查询，完成数据新增、查询、修改、删除相关开发",
+                  "掌握MySQL，熟练基础SQL，了解索引、事务基础概念"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 1.0,
+            "bonus_freq": 0.0,
+            "mention_freq": 1.0
+          },
+          {
+            "skill_id": "redis",
+            "name": "Redis",
+            "category": "data_storage",
+            "required_count": 4,
+            "bonus_count": 1,
+            "evidence": [
+              {
+                "job_id": "J001",
+                "company": "网易",
+                "requirement": "required",
+                "quotes": [
+                  "5. 中间件认知：熟悉Redis、RabbitMQ/Kafka等常用中间件，了解其适用场景及基本原理"
+                ],
+                "source_url": "https://mnowpick.nowcoder.com/m/detail/index?jobId=461869"
+              },
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "熟悉MySQL、Oracle数据库与redis缓存，能编写高效的SQL并进行调优"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              },
+              {
+                "job_id": "J003",
+                "company": "小米",
+                "requirement": "required",
+                "quotes": [
+                  "3、熟悉至少一种关系型数据库（如MySQL）的基本使用和SQL语言，了解Redis等缓存技术或常用消息队列（如Kafka, RabbitMQ）"
+                ],
+                "source_url": "https://xiaomi.jobs.f.mioffice.cn/campus/m/position/7670923491005335850/detail?spread=J7NS6YR"
+              },
+              {
+                "job_id": "J004",
+                "company": "平安科技（平安集团）",
+                "requirement": "required",
+                "quotes": [
+                  "了解 Redis、Kafka、MQ 等中间件的基本概念及使用场景"
+                ],
+                "source_url": "https://campus.pingan.com/positionDetail?positionId=e2ff033ca39b30e0bed494c8660fad10"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "bonus",
+                "quotes": [
+                  "加分项（优先录用）：1、了解SpringCloud、微服务、Redis、MQ（RabbitMQ/RocketMQ）"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 0.8,
+            "bonus_freq": 0.2,
+            "mention_freq": 1.0
+          },
+          {
+            "skill_id": "concurrency",
+            "name": "并发与多线程",
+            "category": "cs_foundation",
+            "required_count": 4,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J001",
+                "company": "网易",
+                "requirement": "required",
+                "quotes": [
+                  "3. 参与解决高并发、高可用场景下的技术难题，如分布式事务、缓存穿透、消息积压等",
+                  "2. 语言基础：Java基础扎实，熟悉集合、并发包、I/O、JVM内存模型，具备良好的编码习惯"
+                ],
+                "source_url": "https://mnowpick.nowcoder.com/m/detail/index?jobId=461869"
+              },
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "3.负责系统性能优化，解决高并发场景下的技术瓶颈（如缓存、消息队列、数据库调优）保障系统高可用性与高稳定性"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              },
+              {
+                "job_id": "J003",
+                "company": "小米",
+                "requirement": "required",
+                "quotes": [
+                  "2、热爱编程，基础扎实，熟悉Java/Rust等语言核心概念，如面向对象编程、集合框架、多线程编程及分布式系统架构等"
+                ],
+                "source_url": "https://xiaomi.jobs.f.mioffice.cn/campus/m/position/7670923491005335850/detail?spread=J7NS6YR"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "required",
+                "quotes": [
+                  "2、基础必备：扎实Java基础：面向对象、集合、IO、多线程、异常、JVM基础原理"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 0.8,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.8
+          },
+          {
+            "skill_id": "linux",
+            "name": "Linux",
+            "category": "devops",
+            "required_count": 4,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J001",
+                "company": "网易",
+                "requirement": "required",
+                "quotes": [
+                  "3. 熟悉Linux环境，能编写Shell脚本"
+                ],
+                "source_url": "https://mnowpick.nowcoder.com/m/detail/index?jobId=461869"
+              },
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "4.熟悉Linux、Unix等操作系统命令，能进行应用部署与问题排查"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              },
+              {
+                "job_id": "J004",
+                "company": "平安科技（平安集团）",
+                "requirement": "required",
+                "quotes": [
+                  "5. 工程化与部署：了解 Linux 常用命令，了解 Docker 容器化基本概念"
+                ],
+                "source_url": "https://campus.pingan.com/positionDetail?positionId=e2ff033ca39b30e0bed494c8660fad10"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "required",
+                "quotes": [
+                  "3、了解Linux基础命令，能部署简单Java服务"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 0.8,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.8
+          },
+          {
+            "skill_id": "rabbitmq",
+            "name": "RabbitMQ/RocketMQ",
+            "category": "data_storage",
+            "required_count": 3,
+            "bonus_count": 1,
+            "evidence": [
+              {
+                "job_id": "J001",
+                "company": "网易",
+                "requirement": "required",
+                "quotes": [
+                  "5. 中间件认知：熟悉Redis、RabbitMQ/Kafka等常用中间件，了解其适用场景及基本原理"
+                ],
+                "source_url": "https://mnowpick.nowcoder.com/m/detail/index?jobId=461869"
+              },
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "3.负责系统性能优化，解决高并发场景下的技术瓶颈（如缓存、消息队列、数据库调优）保障系统高可用性与高稳定性"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              },
+              {
+                "job_id": "J003",
+                "company": "小米",
+                "requirement": "required",
+                "quotes": [
+                  "3、熟悉至少一种关系型数据库（如MySQL）的基本使用和SQL语言，了解Redis等缓存技术或常用消息队列（如Kafka, RabbitMQ）"
+                ],
+                "source_url": "https://xiaomi.jobs.f.mioffice.cn/campus/m/position/7670923491005335850/detail?spread=J7NS6YR"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "bonus",
+                "quotes": [
+                  "加分项（优先录用）：1、了解SpringCloud、微服务、Redis、MQ（RabbitMQ/RocketMQ）"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 0.6,
+            "bonus_freq": 0.2,
+            "mention_freq": 0.8
+          },
+          {
+            "skill_id": "communication",
+            "name": "沟通协作",
+            "category": "soft_skill",
+            "required_count": 3,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "6.自驱进取、爱岗敬业、踏实负责、严谨细致，具备良好的系统性逻辑思维，具有良好的理解和学习能力、问题分析和解决能力、团队合作和沟通协调能力、情绪调节和压力管理能力"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              },
+              {
+                "job_id": "J004",
+                "company": "平安科技（平安集团）",
+                "requirement": "required",
+                "quotes": [
+                  "4. 团队协作与沟通：紧密配合产品经理、测试及运维团队，参与需求评审，理解业务逻辑，确保功能按时高质量交付"
+                ],
+                "source_url": "https://campus.pingan.com/positionDetail?positionId=e2ff033ca39b30e0bed494c8660fad10"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "required",
+                "quotes": [
+                  "3、沟通顺畅，能和产品、测试、实施对齐需求",
+                  "4、责任心强，有团队协作意识，能配合项目迭代节奏"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 0.6,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.6
+          },
+          {
+            "skill_id": "kafka",
+            "name": "Kafka",
+            "category": "data_storage",
+            "required_count": 3,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J001",
+                "company": "网易",
+                "requirement": "required",
+                "quotes": [
+                  "5. 中间件认知：熟悉Redis、RabbitMQ/Kafka等常用中间件，了解其适用场景及基本原理"
+                ],
+                "source_url": "https://mnowpick.nowcoder.com/m/detail/index?jobId=461869"
+              },
+              {
+                "job_id": "J003",
+                "company": "小米",
+                "requirement": "required",
+                "quotes": [
+                  "3、熟悉至少一种关系型数据库（如MySQL）的基本使用和SQL语言，了解Redis等缓存技术或常用消息队列（如Kafka, RabbitMQ）"
+                ],
+                "source_url": "https://xiaomi.jobs.f.mioffice.cn/campus/m/position/7670923491005335850/detail?spread=J7NS6YR"
+              },
+              {
+                "job_id": "J004",
+                "company": "平安科技（平安集团）",
+                "requirement": "required",
+                "quotes": [
+                  "了解 Redis、Kafka、MQ 等中间件的基本概念及使用场景"
+                ],
+                "source_url": "https://campus.pingan.com/positionDetail?positionId=e2ff033ca39b30e0bed494c8660fad10"
+              }
+            ],
+            "required_freq": 0.6,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.6
+          },
+          {
+            "skill_id": "problem_solving",
+            "name": "问题分析与解决",
+            "category": "soft_skill",
+            "required_count": 3,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "6.自驱进取、爱岗敬业、踏实负责、严谨细致，具备良好的系统性逻辑思维，具有良好的理解和学习能力、问题分析和解决能力、团队合作和沟通协调能力、情绪调节和压力管理能力"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              },
+              {
+                "job_id": "J004",
+                "company": "平安科技（平安集团）",
+                "requirement": "required",
+                "quotes": [
+                  "7. 综合素质：具备良好的逻辑思维能力和代码规范意识"
+                ],
+                "source_url": "https://campus.pingan.com/positionDetail?positionId=e2ff033ca39b30e0bed494c8660fad10"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "required",
+                "quotes": [
+                  "2、逻辑思维清晰，具备良好学习能力，愿意学习新技术"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 0.6,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.6
+          },
+          {
+            "skill_id": "unit_test",
+            "name": "单元测试",
+            "category": "devops",
+            "required_count": 3,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J003",
+                "company": "小米",
+                "requirement": "required",
+                "quotes": [
+                  "3、按时完成开发任务，并通过单元测试、接口测试等手段保障代码质量"
+                ],
+                "source_url": "https://xiaomi.jobs.f.mioffice.cn/campus/m/position/7670923491005335850/detail?spread=J7NS6YR"
+              },
+              {
+                "job_id": "J004",
+                "company": "平安科技（平安集团）",
+                "requirement": "required",
+                "quotes": [
+                  "2. 功能实现与问题排查：协助完成需求分析、详细设计、编码及单元测试工作"
+                ],
+                "source_url": "https://campus.pingan.com/positionDetail?positionId=e2ff033ca39b30e0bed494c8660fad10"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "required",
+                "quotes": [
+                  "4、单元测试与缺陷修复：编写单元测试，自测代码"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 0.6,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.6
+          },
+          {
+            "skill_id": "microservice",
+            "name": "微服务架构",
+            "category": "backend_framework",
+            "required_count": 2,
+            "bonus_count": 1,
+            "evidence": [
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "3.精通Java、Python、Go等至少一种主流编程语言，熟悉Spring Boot、Mybatis、Django等框架工具，熟悉Spring Cloud微服务，对计算机系统结构、网络、操作系统等专业知识具有扎实基础和深刻认知",
+                  "5.有开源项目贡献，技术博客撰写，熟悉分布式系统设计或微服务架构，有国产操作系统、数据库、中间件等的开发经验者优先"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              },
+              {
+                "job_id": "J003",
+                "company": "小米",
+                "requirement": "required",
+                "quotes": [
+                  "2、热爱编程，基础扎实，熟悉Java/Rust等语言核心概念，如面向对象编程、集合框架、多线程编程及分布式系统架构等"
+                ],
+                "source_url": "https://xiaomi.jobs.f.mioffice.cn/campus/m/position/7670923491005335850/detail?spread=J7NS6YR"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "bonus",
+                "quotes": [
+                  "加分项（优先录用）：1、了解SpringCloud、微服务、Redis、MQ（RabbitMQ/RocketMQ）"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 0.4,
+            "bonus_freq": 0.2,
+            "mention_freq": 0.6
+          },
+          {
+            "skill_id": "computer_network",
+            "name": "计算机网络",
+            "category": "cs_foundation",
+            "required_count": 2,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "3.精通Java、Python、Go等至少一种主流编程语言，熟悉Spring Boot、Mybatis、Django等框架工具，熟悉Spring Cloud微服务，对计算机系统结构、网络、操作系统等专业知识具有扎实基础和深刻认知"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "required",
+                "quotes": [
+                  "3、具备基础计算机基础：计算机网络（HTTP/HTTPS、TCP）、操作系统基础"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 0.4,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.4
+          },
+          {
+            "skill_id": "git",
+            "name": "Git 版本管理",
+            "category": "devops",
+            "required_count": 2,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "了解Git等版本管理工具，具备良好的代码规范意识"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "required",
+                "quotes": [
+                  "6、代码提交与版本管理：使用Git进行代码管理，遵守团队代码规范，完成代码评审整改",
+                  "掌握Git版本管理工具，了解Maven/Gradle"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 0.4,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.4
+          },
+          {
+            "skill_id": "jvm",
+            "name": "JVM 原理与调优",
+            "category": "cs_foundation",
+            "required_count": 2,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J001",
+                "company": "网易",
+                "requirement": "required",
+                "quotes": [
+                  "2. 语言基础：Java基础扎实，熟悉集合、并发包、I/O、JVM内存模型，具备良好的编码习惯",
+                  "4. 对JVM调优、数据库性能优化有深入实践"
+                ],
+                "source_url": "https://mnowpick.nowcoder.com/m/detail/index?jobId=461869"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "required",
+                "quotes": [
+                  "2、基础必备：扎实Java基础：面向对象、集合、IO、多线程、异常、JVM基础原理"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 0.4,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.4
+          },
+          {
+            "skill_id": "oop",
+            "name": "面向对象编程",
+            "category": "cs_foundation",
+            "required_count": 2,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J003",
+                "company": "小米",
+                "requirement": "required",
+                "quotes": [
+                  "2、热爱编程，基础扎实，熟悉Java/Rust等语言核心概念，如面向对象编程、集合框架、多线程编程及分布式系统架构等"
+                ],
+                "source_url": "https://xiaomi.jobs.f.mioffice.cn/campus/m/position/7670923491005335850/detail?spread=J7NS6YR"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "required",
+                "quotes": [
+                  "2、基础必备：扎实Java基础：面向对象、集合、IO、多线程、异常、JVM基础原理"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 0.4,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.4
+          },
+          {
+            "skill_id": "operating_system",
+            "name": "操作系统",
+            "category": "cs_foundation",
+            "required_count": 2,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "3.精通Java、Python、Go等至少一种主流编程语言，熟悉Spring Boot、Mybatis、Django等框架工具，熟悉Spring Cloud微服务，对计算机系统结构、网络、操作系统等专业知识具有扎实基础和深刻认知",
+                  "4.熟悉Linux、Unix等操作系统命令，能进行应用部署与问题排查"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "required",
+                "quotes": [
+                  "3、具备基础计算机基础：计算机网络（HTTP/HTTPS、TCP）、操作系统基础"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 0.4,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.4
+          },
+          {
+            "skill_id": "responsibility",
+            "name": "责任心与抗压",
+            "category": "soft_skill",
+            "required_count": 2,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "6.自驱进取、爱岗敬业、踏实负责、严谨细致，具备良好的系统性逻辑思维，具有良好的理解和学习能力、问题分析和解决能力、团队合作和沟通协调能力、情绪调节和压力管理能力"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "required",
+                "quotes": [
+                  "4、责任心强，有团队协作意识，能配合项目迭代节奏"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 0.4,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.4
+          },
+          {
+            "skill_id": "restful",
+            "name": "RESTful API 设计",
+            "category": "backend_framework",
+            "required_count": 2,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J004",
+                "company": "平安科技（平安集团）",
+                "requirement": "required",
+                "quotes": [
+                  "了解 RESTful API 设计规范"
+                ],
+                "source_url": "https://campus.pingan.com/positionDetail?positionId=e2ff033ca39b30e0bed494c8660fad10"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "required",
+                "quotes": [
+                  "2、接口开发与联调：编写RESTful接口，配合前端、实施、第三方系统进行接口联调，保证数据交互正常"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 0.4,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.4
+          },
+          {
+            "skill_id": "self_driven",
+            "name": "自驱与学习能力",
+            "category": "soft_skill",
+            "required_count": 2,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "6.自驱进取、爱岗敬业、踏实负责、严谨细致，具备良好的系统性逻辑思维，具有良好的理解和学习能力、问题分析和解决能力、团队合作和沟通协调能力、情绪调节和压力管理能力"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "required",
+                "quotes": [
+                  "2、逻辑思维清晰，具备良好学习能力，愿意学习新技术"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 0.4,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.4
+          },
+          {
+            "skill_id": "docker",
+            "name": "Docker 容器",
+            "category": "devops",
+            "required_count": 1,
+            "bonus_count": 1,
+            "evidence": [
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "bonus",
+                "quotes": [
+                  "了解Docker、kubernetes，以有实操经验为佳"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              },
+              {
+                "job_id": "J004",
+                "company": "平安科技（平安集团）",
+                "requirement": "required",
+                "quotes": [
+                  "5. 工程化与部署：了解 Linux 常用命令，了解 Docker 容器化基本概念"
+                ],
+                "source_url": "https://campus.pingan.com/positionDetail?positionId=e2ff033ca39b30e0bed494c8660fad10"
+              }
+            ],
+            "required_freq": 0.2,
+            "bonus_freq": 0.2,
+            "mention_freq": 0.4
+          },
+          {
+            "skill_id": "spring_boot",
+            "name": "Spring Boot",
+            "category": "backend_framework",
+            "required_count": 1,
+            "bonus_count": 1,
+            "evidence": [
+              {
+                "job_id": "J003",
+                "company": "小米",
+                "requirement": "bonus",
+                "quotes": [
+                  "4、有Java/Rust项目研发经验，有Spring、SpringBoot等主流开发框架使用经验优先"
+                ],
+                "source_url": "https://xiaomi.jobs.f.mioffice.cn/campus/m/position/7670923491005335850/detail?spread=J7NS6YR"
+              },
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "required",
+                "quotes": [
+                  "岗位要求：1、业务功能开发：根据产品需求、接口文档，参与后端业务模块编码开发，使用Java及SpringBoot/SpringCloud等主流框架完成功能实现",
+                  "熟悉Spring/SpringBoot框架，了解MVC开发模式"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 0.2,
+            "bonus_freq": 0.2,
+            "mention_freq": 0.4
+          },
+          {
+            "skill_id": "computer_organization",
+            "name": "计算机组成原理",
+            "category": "cs_foundation",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "3.精通Java、Python、Go等至少一种主流编程语言，熟悉Spring Boot、Mybatis、Django等框架工具，熟悉Spring Cloud微服务，对计算机系统结构、网络、操作系统等专业知识具有扎实基础和深刻认知"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              }
+            ],
+            "required_freq": 0.2,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.2
+          },
+          {
+            "skill_id": "go",
+            "name": "Go",
+            "category": "language",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "3.精通Java、Python、Go等至少一种主流编程语言，熟悉Spring Boot、Mybatis、Django等框架工具，熟悉Spring Cloud微服务，对计算机系统结构、网络、操作系统等专业知识具有扎实基础和深刻认知"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              }
+            ],
+            "required_freq": 0.2,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.2
+          },
+          {
+            "skill_id": "llm",
+            "name": "大语言模型 LLM",
+            "category": "ai",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "5.持续跟进技术演进与行业动态，参与主流框架及工具链学习与分享，掌握并应用大模型AI编程，主动提升个人全链路开发技能"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              }
+            ],
+            "required_freq": 0.2,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.2
+          },
+          {
+            "skill_id": "maven_gradle",
+            "name": "Maven/Gradle",
+            "category": "devops",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "required",
+                "quotes": [
+                  "掌握Git版本管理工具，了解Maven/Gradle"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 0.2,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.2
+          },
+          {
+            "skill_id": "mybatis",
+            "name": "MyBatis",
+            "category": "backend_framework",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "3.精通Java、Python、Go等至少一种主流编程语言，熟悉Spring Boot、Mybatis、Django等框架工具，熟悉Spring Cloud微服务，对计算机系统结构、网络、操作系统等专业知识具有扎实基础和深刻认知"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              }
+            ],
+            "required_freq": 0.2,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.2
+          },
+          {
+            "skill_id": "oracle",
+            "name": "Oracle",
+            "category": "data_storage",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "熟悉MySQL、Oracle数据库与redis缓存，能编写高效的SQL并进行调优"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              }
+            ],
+            "required_freq": 0.2,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.2
+          },
+          {
+            "skill_id": "postgresql",
+            "name": "PostgreSQL",
+            "category": "data_storage",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J004",
+                "company": "平安科技（平安集团）",
+                "requirement": "required",
+                "quotes": [
+                  "4. 熟悉 MySQL 或 PostgreSQL 数据库的基本操作及SQL编写"
+                ],
+                "source_url": "https://campus.pingan.com/positionDetail?positionId=e2ff033ca39b30e0bed494c8660fad10"
+              }
+            ],
+            "required_freq": 0.2,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.2
+          },
+          {
+            "skill_id": "python",
+            "name": "Python",
+            "category": "language",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "3.精通Java、Python、Go等至少一种主流编程语言，熟悉Spring Boot、Mybatis、Django等框架工具，熟悉Spring Cloud微服务，对计算机系统结构、网络、操作系统等专业知识具有扎实基础和深刻认知"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              }
+            ],
+            "required_freq": 0.2,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.2
+          },
+          {
+            "skill_id": "rust",
+            "name": "Rust",
+            "category": "language",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J003",
+                "company": "小米",
+                "requirement": "required",
+                "quotes": [
+                  "2、热爱编程，基础扎实，熟悉Java/Rust等语言核心概念，如面向对象编程、集合框架、多线程编程及分布式系统架构等",
+                  "4、有Java/Rust项目研发经验，有Spring、SpringBoot等主流开发框架使用经验优先"
+                ],
+                "source_url": "https://xiaomi.jobs.f.mioffice.cn/campus/m/position/7670923491005335850/detail?spread=J7NS6YR"
+              }
+            ],
+            "required_freq": 0.2,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.2
+          },
+          {
+            "skill_id": "spring_cloud",
+            "name": "Spring Cloud",
+            "category": "backend_framework",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J005",
+                "company": "震德（chenhsong）",
+                "requirement": "required",
+                "quotes": [
+                  "岗位要求：1、业务功能开发：根据产品需求、接口文档，参与后端业务模块编码开发，使用Java及SpringBoot/SpringCloud等主流框架完成功能实现",
+                  "加分项（优先录用）：1、了解SpringCloud、微服务、Redis、MQ（RabbitMQ/RocketMQ）"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/37875/list.htm?id=d22493d744344ef0ba4298a63beec980"
+              }
+            ],
+            "required_freq": 0.2,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.2
+          },
+          {
+            "skill_id": "english",
+            "name": "英语能力",
+            "category": "soft_skill",
+            "required_count": 0,
+            "bonus_count": 1,
+            "evidence": [
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "bonus",
+                "quotes": [
+                  "2.在校平均学分绩点3.0及以上，CET4同等及以上英语水平，有科研论文发表、竞赛获奖、IT/AI后端研发相关实习实践经历者优先"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              }
+            ],
+            "required_freq": 0.0,
+            "bonus_freq": 0.2,
+            "mention_freq": 0.2
+          },
+          {
+            "skill_id": "kubernetes",
+            "name": "Kubernetes",
+            "category": "devops",
+            "required_count": 0,
+            "bonus_count": 1,
+            "evidence": [
+              {
+                "job_id": "J002",
+                "company": "招商局金融科技有限公司",
+                "requirement": "bonus",
+                "quotes": [
+                  "了解Docker、kubernetes，以有实操经验为佳"
+                ],
+                "source_url": "https://www.ncss.cn/student/m/jobs/VD8RHEdC47fcRr9i6GNXGg/detail.html?type=null"
+              }
+            ],
+            "required_freq": 0.0,
+            "bonus_freq": 0.2,
+            "mention_freq": 0.2
+          }
+        ],
+        "master_degree_jobs": []
+      },
+      {
+        "family": "ai",
+        "job_ids": [
+          "J006",
+          "J007",
+          "J008"
+        ],
+        "job_count": 3,
+        "skills": [
+          {
+            "skill_id": "deep_learning",
+            "name": "深度学习",
+            "category": "ai",
+            "required_count": 3,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J006",
+                "company": "聚和（polyharmony）",
+                "requirement": "required",
+                "quotes": [
+                  "2、扎实的编码能力（Python/C++），熟悉深度学习框架（PyTorch），了解模型工程化工具（vLLM/TensorRT/LoRA等）",
+                  "3、掌握机器学习与深度学习基础（Transformer、分类/聚类/排序模型），有大模型预训练、微调或RAG项目经验者优先"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/zwxq/list.htm?id=46d388b7c34648709bfcfcc1f2ed72cf"
+              },
+              {
+                "job_id": "J007",
+                "company": "深圳虾皮信息科技有限公司（Shopee）",
+                "requirement": "required",
+                "quotes": [
+                  "3、熟悉一种或多种深度学习框架，如 PyTorch"
+                ],
+                "source_url": "https://job.njtu.edu.cn/frontpage/bjtu/html/recruitmentinfoForm.html?positionDetailId=cdd668eb5a18480e95411ac54090e748"
+              },
+              {
+                "job_id": "J008",
+                "company": "爱迪特（秦皇岛）科技股份有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "岗位职责：1.研究和开发机器学习、深度学习、计算机视觉等领域的核心算法，并将其应用于真实业务场景"
+                ],
+                "source_url": "https://m.zhaopin.com/jobs/CC599187620J40877835303.htm"
+              }
+            ],
+            "required_freq": 1.0,
+            "bonus_freq": 0.0,
+            "mention_freq": 1.0
+          },
+          {
+            "skill_id": "pytorch",
+            "name": "PyTorch",
+            "category": "ai",
+            "required_count": 3,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J006",
+                "company": "聚和（polyharmony）",
+                "requirement": "required",
+                "quotes": [
+                  "2、扎实的编码能力（Python/C++），熟悉深度学习框架（PyTorch），了解模型工程化工具（vLLM/TensorRT/LoRA等）"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/zwxq/list.htm?id=46d388b7c34648709bfcfcc1f2ed72cf"
+              },
+              {
+                "job_id": "J007",
+                "company": "深圳虾皮信息科技有限公司（Shopee）",
+                "requirement": "required",
+                "quotes": [
+                  "3、熟悉一种或多种深度学习框架，如 PyTorch"
+                ],
+                "source_url": "https://job.njtu.edu.cn/frontpage/bjtu/html/recruitmentinfoForm.html?positionDetailId=cdd668eb5a18480e95411ac54090e748"
+              },
+              {
+                "job_id": "J008",
+                "company": "爱迪特（秦皇岛）科技股份有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "熟练掌握Python，有使用PyTorch、TensorFlow等框架的项目经验"
+                ],
+                "source_url": "https://m.zhaopin.com/jobs/CC599187620J40877835303.htm"
+              }
+            ],
+            "required_freq": 1.0,
+            "bonus_freq": 0.0,
+            "mention_freq": 1.0
+          },
+          {
+            "skill_id": "communication",
+            "name": "沟通协作",
+            "category": "soft_skill",
+            "required_count": 2,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J006",
+                "company": "聚和（polyharmony）",
+                "requirement": "required",
+                "quotes": [
+                  "5、学习能力强，跨部门沟通积极主动，具备团队意识"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/zwxq/list.htm?id=46d388b7c34648709bfcfcc1f2ed72cf"
+              },
+              {
+                "job_id": "J007",
+                "company": "深圳虾皮信息科技有限公司（Shopee）",
+                "requirement": "required",
+                "quotes": [
+                  "4、具有良好的团队合作精神，能够与跨部门的团队紧密合作，共同推动项目的成功"
+                ],
+                "source_url": "https://job.njtu.edu.cn/frontpage/bjtu/html/recruitmentinfoForm.html?positionDetailId=cdd668eb5a18480e95411ac54090e748"
+              }
+            ],
+            "required_freq": 0.6667,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.6667
+          },
+          {
+            "skill_id": "fine_tuning",
+            "name": "模型微调 SFT/LoRA",
+            "category": "ai",
+            "required_count": 2,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J006",
+                "company": "聚和（polyharmony）",
+                "requirement": "required",
+                "quotes": [
+                  "一、岗位职责：1、算法研发与优化：参与NLP/推荐系统/大模型应用场景的模型设计与训练，完成微调、调优及部署支持",
+                  "4、技术跟踪与应用：跟进大模型前沿技术（SFT/RLHF、RAG、Agent等），参与技术选型与预研，输出验证报告"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/zwxq/list.htm?id=46d388b7c34648709bfcfcc1f2ed72cf"
+              },
+              {
+                "job_id": "J007",
+                "company": "深圳虾皮信息科技有限公司（Shopee）",
+                "requirement": "required",
+                "quotes": [
+                  "工作职责：1、参与开发和建设公司的训练、微调、评估、推理工具链，支撑公司 AI 模型的分布式训练和推理应用",
+                  "4、跟进和探索前沿的分布式训练、微调、评估和推理技术方案，推动相应工具的不断迭代"
+                ],
+                "source_url": "https://job.njtu.edu.cn/frontpage/bjtu/html/recruitmentinfoForm.html?positionDetailId=cdd668eb5a18480e95411ac54090e748"
+              }
+            ],
+            "required_freq": 0.6667,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.6667
+          },
+          {
+            "skill_id": "python",
+            "name": "Python",
+            "category": "language",
+            "required_count": 2,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J006",
+                "company": "聚和（polyharmony）",
+                "requirement": "required",
+                "quotes": [
+                  "2、扎实的编码能力（Python/C++），熟悉深度学习框架（PyTorch），了解模型工程化工具（vLLM/TensorRT/LoRA等）"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/zwxq/list.htm?id=46d388b7c34648709bfcfcc1f2ed72cf"
+              },
+              {
+                "job_id": "J008",
+                "company": "爱迪特（秦皇岛）科技股份有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "熟练掌握Python，有使用PyTorch、TensorFlow等框架的项目经验"
+                ],
+                "source_url": "https://m.zhaopin.com/jobs/CC599187620J40877835303.htm"
+              }
+            ],
+            "required_freq": 0.6667,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.6667
+          },
+          {
+            "skill_id": "self_driven",
+            "name": "自驱与学习能力",
+            "category": "soft_skill",
+            "required_count": 2,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J006",
+                "company": "聚和（polyharmony）",
+                "requirement": "required",
+                "quotes": [
+                  "5、学习能力强，跨部门沟通积极主动，具备团队意识"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/zwxq/list.htm?id=46d388b7c34648709bfcfcc1f2ed72cf"
+              },
+              {
+                "job_id": "J007",
+                "company": "深圳虾皮信息科技有限公司（Shopee）",
+                "requirement": "required",
+                "quotes": [
+                  "5、具备较强的自我驱动力和学习能力，并乐于不断尝试、追求业务突破"
+                ],
+                "source_url": "https://job.njtu.edu.cn/frontpage/bjtu/html/recruitmentinfoForm.html?positionDetailId=cdd668eb5a18480e95411ac54090e748"
+              }
+            ],
+            "required_freq": 0.6667,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.6667
+          },
+          {
+            "skill_id": "computer_vision",
+            "name": "计算机视觉 CV",
+            "category": "ai",
+            "required_count": 1,
+            "bonus_count": 1,
+            "evidence": [
+              {
+                "job_id": "J007",
+                "company": "深圳虾皮信息科技有限公司（Shopee）",
+                "requirement": "bonus",
+                "quotes": [
+                  "加分项：1、熟悉常见的 CV、NLP 模型，如 ViT、GPT 等"
+                ],
+                "source_url": "https://job.njtu.edu.cn/frontpage/bjtu/html/recruitmentinfoForm.html?positionDetailId=cdd668eb5a18480e95411ac54090e748"
+              },
+              {
+                "job_id": "J008",
+                "company": "爱迪特（秦皇岛）科技股份有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "岗位职责：1.研究和开发机器学习、深度学习、计算机视觉等领域的核心算法，并将其应用于真实业务场景",
+                  "2.针对具体业务场景（如CBCT三维重建、口扫数据分析、手术导航）进行算法选型、建模、训练和迭代优化"
+                ],
+                "source_url": "https://m.zhaopin.com/jobs/CC599187620J40877835303.htm"
+              }
+            ],
+            "required_freq": 0.3333,
+            "bonus_freq": 0.3333,
+            "mention_freq": 0.6667
+          },
+          {
+            "skill_id": "machine_learning",
+            "name": "机器学习",
+            "category": "ai",
+            "required_count": 1,
+            "bonus_count": 1,
+            "evidence": [
+              {
+                "job_id": "J006",
+                "company": "聚和（polyharmony）",
+                "requirement": "bonus",
+                "quotes": [
+                  "3、掌握机器学习与深度学习基础（Transformer、分类/聚类/排序模型），有大模型预训练、微调或RAG项目经验者优先"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/zwxq/list.htm?id=46d388b7c34648709bfcfcc1f2ed72cf"
+              },
+              {
+                "job_id": "J008",
+                "company": "爱迪特（秦皇岛）科技股份有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "岗位职责：1.研究和开发机器学习、深度学习、计算机视觉等领域的核心算法，并将其应用于真实业务场景"
+                ],
+                "source_url": "https://m.zhaopin.com/jobs/CC599187620J40877835303.htm"
+              }
+            ],
+            "required_freq": 0.3333,
+            "bonus_freq": 0.3333,
+            "mention_freq": 0.6667
+          },
+          {
+            "skill_id": "math_foundation",
+            "name": "数学基础（概率/线代/优化）",
+            "category": "ai",
+            "required_count": 1,
+            "bonus_count": 1,
+            "evidence": [
+              {
+                "job_id": "J006",
+                "company": "聚和（polyharmony）",
+                "requirement": "bonus",
+                "quotes": [
+                  "4、数学功底扎实，具备优秀的问题抽象与工程落地能力，有顶会论文或竞赛获奖者优先"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/zwxq/list.htm?id=46d388b7c34648709bfcfcc1f2ed72cf"
+              },
+              {
+                "job_id": "J008",
+                "company": "爱迪特（秦皇岛）科技股份有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "理论基础：扎实的数学功底，精通概率论、线性代数、最优化理论、数值分析等"
+                ],
+                "source_url": "https://m.zhaopin.com/jobs/CC599187620J40877835303.htm"
+              }
+            ],
+            "required_freq": 0.3333,
+            "bonus_freq": 0.3333,
+            "mention_freq": 0.6667
+          },
+          {
+            "skill_id": "nlp",
+            "name": "自然语言处理 NLP",
+            "category": "ai",
+            "required_count": 1,
+            "bonus_count": 1,
+            "evidence": [
+              {
+                "job_id": "J006",
+                "company": "聚和（polyharmony）",
+                "requirement": "required",
+                "quotes": [
+                  "一、岗位职责：1、算法研发与优化：参与NLP/推荐系统/大模型应用场景的模型设计与训练，完成微调、调优及部署支持"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/zwxq/list.htm?id=46d388b7c34648709bfcfcc1f2ed72cf"
+              },
+              {
+                "job_id": "J007",
+                "company": "深圳虾皮信息科技有限公司（Shopee）",
+                "requirement": "bonus",
+                "quotes": [
+                  "加分项：1、熟悉常见的 CV、NLP 模型，如 ViT、GPT 等"
+                ],
+                "source_url": "https://job.njtu.edu.cn/frontpage/bjtu/html/recruitmentinfoForm.html?positionDetailId=cdd668eb5a18480e95411ac54090e748"
+              }
+            ],
+            "required_freq": 0.3333,
+            "bonus_freq": 0.3333,
+            "mention_freq": 0.6667
+          },
+          {
+            "skill_id": "problem_solving",
+            "name": "问题分析与解决",
+            "category": "soft_skill",
+            "required_count": 1,
+            "bonus_count": 1,
+            "evidence": [
+              {
+                "job_id": "J006",
+                "company": "聚和（polyharmony）",
+                "requirement": "bonus",
+                "quotes": [
+                  "4、数学功底扎实，具备优秀的问题抽象与工程落地能力，有顶会论文或竞赛获奖者优先"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/zwxq/list.htm?id=46d388b7c34648709bfcfcc1f2ed72cf"
+              },
+              {
+                "job_id": "J008",
+                "company": "爱迪特（秦皇岛）科技股份有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "综合素养：具备优秀的分析问题和解决问题的能力，对攻克技术难题有强烈的求知欲和成就感"
+                ],
+                "source_url": "https://m.zhaopin.com/jobs/CC599187620J40877835303.htm"
+              }
+            ],
+            "required_freq": 0.3333,
+            "bonus_freq": 0.3333,
+            "mention_freq": 0.6667
+          },
+          {
+            "skill_id": "computer_network",
+            "name": "计算机网络",
+            "category": "cs_foundation",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J007",
+                "company": "深圳虾皮信息科技有限公司（Shopee）",
+                "requirement": "required",
+                "quotes": [
+                  "2、掌握计算机专业基础知识，如计算机操作系统、计算机网络、计算机组成原理等"
+                ],
+                "source_url": "https://job.njtu.edu.cn/frontpage/bjtu/html/recruitmentinfoForm.html?positionDetailId=cdd668eb5a18480e95411ac54090e748"
+              }
+            ],
+            "required_freq": 0.3333,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.3333
+          },
+          {
+            "skill_id": "computer_organization",
+            "name": "计算机组成原理",
+            "category": "cs_foundation",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J007",
+                "company": "深圳虾皮信息科技有限公司（Shopee）",
+                "requirement": "required",
+                "quotes": [
+                  "2、掌握计算机专业基础知识，如计算机操作系统、计算机网络、计算机组成原理等"
+                ],
+                "source_url": "https://job.njtu.edu.cn/frontpage/bjtu/html/recruitmentinfoForm.html?positionDetailId=cdd668eb5a18480e95411ac54090e748"
+              }
+            ],
+            "required_freq": 0.3333,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.3333
+          },
+          {
+            "skill_id": "data_structure",
+            "name": "数据结构与算法",
+            "category": "cs_foundation",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J007",
+                "company": "深圳虾皮信息科技有限公司（Shopee）",
+                "requirement": "required",
+                "quotes": [
+                  "3、掌握常见的数据结构和算法，编程能力良好，能够利用计算机程序解决实际的问题"
+                ],
+                "source_url": "https://job.njtu.edu.cn/frontpage/bjtu/html/recruitmentinfoForm.html?positionDetailId=cdd668eb5a18480e95411ac54090e748"
+              }
+            ],
+            "required_freq": 0.3333,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.3333
+          },
+          {
+            "skill_id": "distributed_training",
+            "name": "分布式训练",
+            "category": "ai",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J007",
+                "company": "深圳虾皮信息科技有限公司（Shopee）",
+                "requirement": "required",
+                "quotes": [
+                  "工作职责：1、参与开发和建设公司的训练、微调、评估、推理工具链，支撑公司 AI 模型的分布式训练和推理应用",
+                  "2、参与公司内分布式训练和推理任务优化，包括但不限于框架优化、算子优化、通信优化和存储优化等"
+                ],
+                "source_url": "https://job.njtu.edu.cn/frontpage/bjtu/html/recruitmentinfoForm.html?positionDetailId=cdd668eb5a18480e95411ac54090e748"
+              }
+            ],
+            "required_freq": 0.3333,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.3333
+          },
+          {
+            "skill_id": "feature_engineering",
+            "name": "特征工程",
+            "category": "ai",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J006",
+                "company": "聚和（polyharmony）",
+                "requirement": "required",
+                "quotes": [
+                  "3、数据与特征工程：处理多源数据，构建特征库与画像标签，搭建数据闭环，持续提升模型质量"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/zwxq/list.htm?id=46d388b7c34648709bfcfcc1f2ed72cf"
+              }
+            ],
+            "required_freq": 0.3333,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.3333
+          },
+          {
+            "skill_id": "llm",
+            "name": "大语言模型 LLM",
+            "category": "ai",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J006",
+                "company": "聚和（polyharmony）",
+                "requirement": "required",
+                "quotes": [
+                  "一、岗位职责：1、算法研发与优化：参与NLP/推荐系统/大模型应用场景的模型设计与训练，完成微调、调优及部署支持",
+                  "4、技术跟踪与应用：跟进大模型前沿技术（SFT/RLHF、RAG、Agent等），参与技术选型与预研，输出验证报告"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/zwxq/list.htm?id=46d388b7c34648709bfcfcc1f2ed72cf"
+              }
+            ],
+            "required_freq": 0.3333,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.3333
+          },
+          {
+            "skill_id": "model_inference",
+            "name": "模型推理与工程化",
+            "category": "ai",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J006",
+                "company": "聚和（polyharmony）",
+                "requirement": "required",
+                "quotes": [
+                  "2、模型工程化：负责模型从实验到生产的全链路工程化，包括数据处理、训练评估、推理服务部署与效果监控"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/zwxq/list.htm?id=46d388b7c34648709bfcfcc1f2ed72cf"
+              }
+            ],
+            "required_freq": 0.3333,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.3333
+          },
+          {
+            "skill_id": "operating_system",
+            "name": "操作系统",
+            "category": "cs_foundation",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J007",
+                "company": "深圳虾皮信息科技有限公司（Shopee）",
+                "requirement": "required",
+                "quotes": [
+                  "2、掌握计算机专业基础知识，如计算机操作系统、计算机网络、计算机组成原理等"
+                ],
+                "source_url": "https://job.njtu.edu.cn/frontpage/bjtu/html/recruitmentinfoForm.html?positionDetailId=cdd668eb5a18480e95411ac54090e748"
+              }
+            ],
+            "required_freq": 0.3333,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.3333
+          },
+          {
+            "skill_id": "rag",
+            "name": "RAG 检索增强",
+            "category": "ai",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J006",
+                "company": "聚和（polyharmony）",
+                "requirement": "required",
+                "quotes": [
+                  "4、技术跟踪与应用：跟进大模型前沿技术（SFT/RLHF、RAG、Agent等），参与技术选型与预研，输出验证报告",
+                  "3、掌握机器学习与深度学习基础（Transformer、分类/聚类/排序模型），有大模型预训练、微调或RAG项目经验者优先"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/zwxq/list.htm?id=46d388b7c34648709bfcfcc1f2ed72cf"
+              }
+            ],
+            "required_freq": 0.3333,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.3333
+          },
+          {
+            "skill_id": "recommendation",
+            "name": "推荐系统",
+            "category": "ai",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J006",
+                "company": "聚和（polyharmony）",
+                "requirement": "required",
+                "quotes": [
+                  "一、岗位职责：1、算法研发与优化：参与NLP/推荐系统/大模型应用场景的模型设计与训练，完成微调、调优及部署支持",
+                  "3、掌握机器学习与深度学习基础（Transformer、分类/聚类/排序模型），有大模型预训练、微调或RAG项目经验者优先"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/zwxq/list.htm?id=46d388b7c34648709bfcfcc1f2ed72cf"
+              }
+            ],
+            "required_freq": 0.3333,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.3333
+          },
+          {
+            "skill_id": "tensorflow",
+            "name": "TensorFlow",
+            "category": "ai",
+            "required_count": 1,
+            "bonus_count": 0,
+            "evidence": [
+              {
+                "job_id": "J008",
+                "company": "爱迪特（秦皇岛）科技股份有限公司",
+                "requirement": "required",
+                "quotes": [
+                  "熟练掌握Python，有使用PyTorch、TensorFlow等框架的项目经验"
+                ],
+                "source_url": "https://m.zhaopin.com/jobs/CC599187620J40877835303.htm"
+              }
+            ],
+            "required_freq": 0.3333,
+            "bonus_freq": 0.0,
+            "mention_freq": 0.3333
+          },
+          {
+            "skill_id": "transformer",
+            "name": "Transformer 架构",
+            "category": "ai",
+            "required_count": 0,
+            "bonus_count": 1,
+            "evidence": [
+              {
+                "job_id": "J006",
+                "company": "聚和（polyharmony）",
+                "requirement": "bonus",
+                "quotes": [
+                  "3、掌握机器学习与深度学习基础（Transformer、分类/聚类/排序模型），有大模型预训练、微调或RAG项目经验者优先"
+                ],
+                "source_url": "https://jyzx.scut.edu.cn/zwxq/list.htm?id=46d388b7c34648709bfcfcc1f2ed72cf"
+              }
+            ],
+            "required_freq": 0.0,
+            "bonus_freq": 0.3333,
+            "mention_freq": 0.3333
+          }
+        ],
+        "master_degree_jobs": [
+          "J008"
+        ]
+      }
+    ],
+    "generated_at": "2026-10-30 23:28:53"
+  },
+  "analyzed_at": "2026-10-30 23:28:53",
+  "mode_status": {
+    "mode": "mock",
+    "model": "mock-rules",
+    "base_url": "",
+    "is_mock": true
+  }
+}

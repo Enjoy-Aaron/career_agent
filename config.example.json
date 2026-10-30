@@ -1,0 +1,25 @@
+{
+  "mode": "mock",
+  "model": "mock-rules",
+  "base_url": "",
+  "api_key": "",
+  "timeout_seconds": 60,
+  "fallback_to_mock": false,
+  "_comment": "复制本文件为 config.json 后修改。三种模式：mock 模拟（默认，无需密钥）/ local 本地模型 / cloud 云端模型。",
+  "_local_example": {
+    "mode": "local",
+    "model": "qwen2.5:7b",
+    "base_url": "http://127.0.0.1:11434/v1/chat/completions",
+    "api_key": "",
+    "timeout_seconds": 90,
+    "fallback_to_mock": false
+  },
+  "_cloud_example": {
+    "mode": "cloud",
+    "model": "your-model-name",
+    "base_url": "https://your-provider/v1/chat/completions",
+    "api_key": "sk-在这里填你的密钥",
+    "timeout_seconds": 60,
+    "fallback_to_mock": false
+  }
+}

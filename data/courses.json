@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "source": "华南农业大学《计算机科学与技术专业人才培养方案（2024版）》及《2026计算机科学与技术执行计划》，https://info.scau.edu.cn；招生办专业介绍页 https://zsb.scau.edu.cn/2019/1126/c8727a207409/page.htm",
+  "note": "课内课程不占用课外工时预算，仅作为能力证据与映射依据；课程完成 ≠ 岗位能力达标，需结合作品/考核另行判断。typical_semester 为建议修读学期（1-8），执行计划已明确的照录，未明确的按常规教学进度标注并在 note 说明。",
+  "courses": [
+    {"course_id": "C01", "name": "高等数学", "kind": "required", "typical_semester": 1, "covers_skills": ["math_foundation"], "source": "培养方案/招生介绍", "note": "数学基础，分两学期开设"},
+    {"course_id": "C02", "name": "线性代数", "kind": "required", "typical_semester": 2, "covers_skills": ["math_foundation"], "source": "招生介绍课程列表", "note": "建议学期按常规进度"},
+    {"course_id": "C03", "name": "概率论与数理统计", "kind": "required", "typical_semester": 3, "covers_skills": ["math_foundation"], "source": "招生介绍课程列表", "note": "建议学期按常规进度"},
+    {"course_id": "C04", "name": "离散结构（离散数学）", "kind": "required", "typical_semester": 2, "covers_skills": ["discrete_math", "math_foundation"], "source": "2022版培养方案核心课", "note": "专业核心基础"},
+    {"course_id": "C05", "name": "计算机科学概论", "kind": "required", "typical_semester": 1, "covers_skills": ["computer_organization"], "source": "2024版培养方案核心课", "note": "专业入门"},
+    {"course_id": "C06", "name": "Python 程序设计/数值计算", "kind": "required", "typical_semester": 1, "covers_skills": ["python"], "source": "招生介绍课程列表", "note": "首门程序设计课"},
+    {"course_id": "C07", "name": "面向对象程序设计", "kind": "required", "typical_semester": 3, "covers_skills": ["oop", "java"], "source": "2026执行计划（2027-2028-1）", "note": "执行计划明确学期"},
+    {"course_id": "C08", "name": "数据结构", "kind": "required", "typical_semester": 2, "covers_skills": ["data_structure"], "source": "2024版培养方案核心课", "note": "建议学期按常规进度"},
+    {"course_id": "C09", "name": "算法分析与设计", "kind": "elective", "typical_semester": 4, "covers_skills": ["data_structure"], "source": "招生介绍课程列表", "note": "建议学期按常规进度"},
+    {"course_id": "C10", "name": "计算机组成原理", "kind": "required", "typical_semester": 3, "covers_skills": ["computer_organization"], "source": "2026执行计划（2027-2028-1）", "note": "执行计划明确学期"},
+    {"course_id": "C11", "name": "计算机网络", "kind": "required", "typical_semester": 3, "covers_skills": ["computer_network"], "source": "2026执行计划（2027-2028-1）", "note": "执行计划明确学期"},
+    {"course_id": "C12", "name": "操作系统", "kind": "required", "typical_semester": 4, "covers_skills": ["operating_system", "linux"], "source": "2026执行计划（2027-2028-2）", "note": "执行计划明确学期"},
+    {"course_id": "C13", "name": "数据库系统", "kind": "required", "typical_semester": 3, "covers_skills": ["mysql", "sql"], "source": "2026执行计划（2027-2028-1）", "note": "执行计划明确学期"},
+    {"course_id": "C14", "name": "编译原理", "kind": "required", "typical_semester": 5, "covers_skills": ["discrete_math"], "source": "2024版培养方案核心课", "note": "建议学期按常规进度"},
+    {"course_id": "C15", "name": "Linux 系统", "kind": "elective", "typical_semester": 3, "covers_skills": ["linux"], "source": "招生介绍课程列表", "note": "建议学期按常规进度"},
+    {"course_id": "C16", "name": "软件工程基础", "kind": "required", "typical_semester": 5, "covers_skills": ["restful", "unit_test"], "source": "招生介绍课程列表", "note": "含项目管理与规范"},
+    {"course_id": "C17", "name": "数据分析与数据挖掘", "kind": "elective", "typical_semester": 5, "covers_skills": ["machine_learning", "feature_engineering"], "source": "招生介绍课程列表", "note": "建议学期按常规进度"},
+    {"course_id": "C18", "name": "人工智能", "kind": "elective", "typical_semester": 5, "covers_skills": ["machine_learning"], "source": "数信学院课程列表", "note": "建议学期按常规进度"},
+    {"course_id": "C19", "name": "深度学习", "kind": "elective", "typical_semester": 6, "covers_skills": ["deep_learning", "pytorch"], "source": "数信学院课程列表", "note": "建议学期按常规进度"},
+    {"course_id": "C20", "name": "文本挖掘与分析", "kind": "elective", "typical_semester": 6, "covers_skills": ["nlp", "machine_learning"], "source": "数信学院课程列表", "note": "建议学期按常规进度"},
+    {"course_id": "C21", "name": "计算机视觉与图像处理", "kind": "elective", "typical_semester": 6, "covers_skills": ["computer_vision", "deep_learning"], "source": "数信学院课程列表", "note": "建议学期按常规进度"}
+  ]
+}

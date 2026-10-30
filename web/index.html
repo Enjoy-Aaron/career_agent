@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>岗位需求反推成长规划 Agent</title>
+<link rel="stylesheet" href="/web/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="logo-mark">CA</div>
+    <div>
+      <h1>岗位需求反推成长规划 Agent</h1>
+      <p>真实招聘 · 能力差距 · 课程映射 · 分学期路线 · 动态调整</p>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <span id="model-badge" class="badge badge-mock">模拟模式</span>
+    <button class="btn btn-ghost" id="btn-reset" title="清空本地状态重新演示">重置演示</button>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button class="tab active" data-tab="profile">① 我的画像</button>
+  <button class="tab" data-tab="jobs">② 岗位分析</button>
+  <button class="tab" data-tab="plan">③ 成长路线</button>
+  <button class="tab" data-tab="adjust">④ 反馈调整</button>
+  <button class="tab" data-tab="chat">⑤ Agent 对话</button>
+  <button class="tab" data-tab="report">⑥ 报告导出</button>
+</nav>
+
+<main class="content">
+
+<!-- ========== 画像 ========== -->
+<section class="panel active" id="panel-profile">
+  <div class="card">
+    <h2>建立学生画像</h2>
+    <p class="hint">信息仅保存在本机 state 目录，重启应用自动恢复。没有证据的能力请放入“待评估”，不要直接标记已掌握。</p>
+    <div class="form-grid">
+      <label>专业
+        <input type="text" id="f-major" value="计算机科学与技术">
+      </label>
+      <label>当前学期（1-8）
+        <input type="number" id="f-semester" min="1" max="8" value="3">
+      </label>
+      <label>目标岗位族
+        <select id="f-family">
+          <option value="backend">后端开发工程师（Java 方向）</option>
+          <option value="ai">AI 算法工程师</option>
+        </select>
+      </label>
+      <label>每周课外可投入（小时）
+        <input type="number" id="f-hours" min="0" max="80" step="0.5" value="8">
+      </label>
+      <label>发展路径
+        <select id="f-path">
+          <option value="employment">直接就业</option>
+          <option value="postgraduate">考研</option>
+          <option value="recommendation">保研</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>已有能力（按类别勾选已掌握项）</h2>
+    <div id="skill-picker" class="skill-picker"><p class="hint">加载中…</p></div>
+    <h3>待评估能力（无证据，先选后补作品/考核）</h3>
+    <div id="pending-picker" class="skill-picker"><p class="hint">加载中…</p></div>
+    <button class="btn btn-primary" id="btn-save-profile">保存画像</button>
+    <span id="profile-msg" class="inline-msg"></span>
+  </div>
+</section>
+
+<!-- ========== 岗位分析 ========== -->
+<section class="panel" id="panel-jobs">
+  <div class="card">
+    <h2>真实招聘样本（8 条，均附来源与获取日期）</h2>
+    <div id="job-list" class="job-list"></div>
+  </div>
+  <div class="card">
+    <h2>粘贴/导入新的招聘文本</h2>
+    <textarea id="paste-text" rows="5" placeholder="把招聘 JD 原文粘贴到这里，系统会登记来源并参与归一统计…"></textarea>
+    <div class="form-grid">
+      <label>岗位族
+        <select id="paste-family">
+          <option value="backend">后端开发</option>
+          <option value="ai">AI 算法</option>
+        </select>
+      </label>
+      <label>公司 <input type="text" id="paste-company" placeholder="选填"></label>
+      <label>来源链接 <input type="text" id="paste-url" placeholder="选填"></label>
+    </div>
+    <button class="btn btn-secondary" id="btn-paste">登记招聘</button>
+    <button class="btn btn-primary" id="btn-analyze">开始分析全部招聘</button>
+    <span id="analyze-msg" class="inline-msg"></span>
+  </div>
+  <div class="card">
+    <h2>登记新的岗位族（如 前端 / 测试 / 数据）</h2>
+    <p class="hint">预置了「后端开发」「AI 算法」两族；目标岗位不在其中时，可登记自定义族并为其添加招聘、独立分析。</p>
+    <div class="form-grid">
+      <label>族标识（英文，如 frontend）
+        <input type="text" id="fam-id" placeholder="frontend">
+      </label>
+      <label>显示名（如 前端开发）
+        <input type="text" id="fam-label" placeholder="前端开发">
+      </label>
+    </div>
+    <button class="btn btn-secondary" id="btn-add-family">登记岗位族</button>
+    <span id="family-msg" class="inline-msg"></span>
+  </div>
+  <div class="card">
+    <h2>批量导入招聘（JSON 数组）</h2>
+    <p class="hint">粘贴 JSON 数组，每项含 raw_text、family（及可选 title/company/source_url）。示例格式见占位符。</p>
+    <textarea id="import-text" rows="6" placeholder='[{"raw_text":"岗位要求：……","family":"backend","title":"岗位名","company":"公司名","source_url":"https://…"}]'></textarea>
+    <button class="btn btn-secondary" id="btn-import">批量导入</button>
+    <span id="import-msg" class="inline-msg"></span>
+  </div>
+  <div class="card">
+    <h2>从链接抓取招聘（尽力而为）</h2>
+    <p class="hint">输入招聘页 URL，系统用标准库抓取正文入库；不同网站结构抓取效果不一，失败会提示改用手动粘贴。</p>
+    <div class="form-grid">
+      <label>招聘页链接
+        <input type="text" id="fetch-url" placeholder="https://…">
+      </label>
+      <label>岗位族
+        <select id="fetch-family">
+          <option value="backend">后端开发</option>
+          <option value="ai">AI 算法</option>
+        </select>
+      </label>
+    </div>
+    <button class="btn btn-secondary" id="btn-fetch">抓取并登记</button>
+    <span id="fetch-msg" class="inline-msg"></span>
+  </div>
+  <div class="card hidden" id="analysis-card">
+    <h2>技能归类与频次（按去重招聘数统计）</h2>
+    <p class="hint">硬性要求与加分项分开保存；频次仅作优先级参考，不等于硬门槛。点击技能可查看原文证据。</p>
+    <div id="analysis-result"></div>
+  </div>
+  <div class="card hidden" id="chart-card">
+    <div class="chart-head">
+      <h2>技能频次对比图</h2>
+      <div class="chart-legend">
+        <span><i class="dot dot-req"></i>硬性要求</span>
+        <span><i class="dot dot-bonus"></i>加分项</span>
+      </div>
+    </div>
+    <div id="skill-chart" class="chart-scroll"></div>
+  </div>
+</section>
+
+<!-- ========== 成长路线 ========== -->
+<section class="panel" id="panel-plan">
+  <div class="card">
+    <h2>生成成长路线</h2>
+    <p class="hint">依据岗位缺口、先修依赖与每周工时，生成剩余学期路线与未来四周任务；计划通过程序校验后才会保存为可采用版本。</p>
+    <button class="btn btn-primary" id="btn-generate">生成/刷新计划</button>
+    <span id="plan-msg" class="inline-msg"></span>
+  </div>
+  <div class="card hidden" id="gap-chart-card">
+    <div class="chart-head">
+      <h2>能力差距雷达图（掌握 vs 岗位核心要求）</h2>
+      <p class="hint" style="margin:0">越靠近外圈代表岗位要求越强；绿色面积是你当前已掌握的能力，缺口越大越需优先补齐。</p>
+    </div>
+    <div id="gap-chart" class="chart-center"></div>
+  </div>
+  <div class="card hidden" id="timeline-card">
+    <div class="chart-head">
+      <h2>四年成长路线时间轴</h2>
+      <p class="hint" style="margin:0">按学期铺开的整体规划，固定块（考研/保研）与暑期实习高亮显示。</p>
+    </div>
+    <div id="route-timeline" class="chart-scroll"></div>
+  </div>
+  <div id="plan-view"></div>
+</section>
+
+<!-- ========== 反馈调整 ========== -->
+<section class="panel" id="panel-adjust">
+  <div class="card">
+    <h2>记录任务完成</h2>
+    <p class="hint">勾选已完成的活动，成果与可迁移能力会在重规划时保留，不会因换岗位而消失。</p>
+    <div id="completion-list" class="completion-list"><p class="hint">请先生成计划。</p></div>
+  </div>
+  <div class="card">
+    <h2>改变条件并重新规划</h2>
+    <div class="form-grid">
+      <label>目标岗位族
+        <select id="adj-family">
+          <option value="">不改变</option>
+          <option value="backend">后端开发</option>
+          <option value="ai">AI 算法</option>
+        </select>
+      </label>
+      <label>每周工时
+        <input type="number" id="adj-hours" min="0" max="80" step="0.5" placeholder="不改变">
+      </label>
+      <label>发展路径
+        <select id="adj-path">
+          <option value="">不改变</option>
+          <option value="employment">就业</option>
+          <option value="postgraduate">考研</option>
+          <option value="recommendation">保研</option>
+        </select>
+      </label>
+    </div>
+    <button class="btn btn-primary" id="btn-adjust">应用调整</button>
+    <span id="adjust-msg" class="inline-msg"></span>
+  </div>
+  <div class="card">
+    <h2>版本差异</h2>
+    <div id="diff-view"><p class="hint">调整后在此展示新增 / 保留 / 延期 / 移除。</p></div>
+  </div>
+</section>
+
+<!-- ========== Agent 对话 ========== -->
+<section class="panel" id="panel-chat">
+  <div class="card chat-card">
+    <h2>与 Agent 对话（观察工具调用闭环）</h2>
+    <div id="chat-box" class="chat-box"></div>
+    <div class="chat-input">
+      <input type="text" id="chat-input" placeholder="例如：分析招聘并生成成长路线">
+      <button class="btn btn-primary" id="btn-chat-send">发送</button>
+    </div>
+    <div class="quick-chips">
+      <button class="chip" data-msg="分析全部招聘">分析全部招聘</button>
+      <button class="chip" data-msg="生成成长路线">生成成长路线</button>
+      <button class="chip" data-msg="导出我的成长报告">导出报告</button>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Agent 工具调用记录（白名单 / 校验 / 上限 8）</h2>
+    <button class="btn btn-secondary" id="btn-refresh-records">刷新记录</button>
+    <div class="table-wrap">
+      <table id="records-table">
+        <thead><tr><th>#</th><th>触发</th><th>工具</th><th>参数</th><th>结果</th><th>模式</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 报告 ========== -->
+<section class="panel" id="panel-report">
+  <div class="card">
+    <h2>成长报告导出</h2>
+    <p class="hint">报告含画像、岗位证据、差距、分学期路线、四周任务与版本差异，所有结论附来源，Markdown 格式可直接提交或转 PDF。</p>
+    <button class="btn btn-primary" id="btn-export">生成并下载报告</button>
+    <pre id="report-preview" class="report-preview hidden"></pre>
+  </div>
+</section>
+
+</main>
+
+<script src="/web/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+{
+  "records": [
+    {
+      "seq": 1,
+      "trigger": "page",
+      "tool_name": "get_gap",
+      "arguments": {},
+      "ok": false,
+      "at": "2026-10-30 23:27:28",
+      "model_mode": "mock",
+      "result_summary": "{\"ok\": false, \"message\": \"缺少画像或招聘分析，请先建档并分析\"}"
+    },
+    {
+      "seq": 2,
+      "trigger": "page",
+      "tool_name": "analyze_jobs",
+      "arguments": {
+        "family": "bad_value"
+      },
+      "ok": false,
+      "at": "2026-10-30 23:27:28",
+      "model_mode": "mock",
+      "error": [
+        "岗位族 'bad_value' 未知，可用：backend, ai；如需新岗位族请先调用 add_custom_family 登记"
+      ]
+    },
+    {
+      "seq": 3,
+      "trigger": "page",
+      "tool_name": "evil_tool",
+      "arguments": {},
+      "ok": false,
+      "at": "2026-10-30 23:27:28",
+      "model_mode": "mock",
+      "error": [
+        "工具 evil_tool 不在白名单内"
+      ]
+    },
+    {
+      "seq": 4,
+      "trigger": "page",
+      "tool_name": "save_profile",
+      "arguments": {
+        "major": "计算机科学与技术",
+        "semester": 3,
+        "target_family": "backend",
+        "weekly_hours": 8,
+        "path": "employment",
+        "mastered_skills": [
+          "python",
+          "git",
+          "data_structure"
+        ],
+        "pending_skills": []
+      },
+      "ok": true,
+      "at": "2026-10-30 23:27:28",
+      "model_mode": "mock"
+    },
+    {
+      "seq": 5,
+      "trigger": "page",
+      "tool_name": "analyze_jobs",
+      "arguments": {
+        "family": "all"
+      },
+      "ok": true,
+      "at": "2026-10-30 23:27:28",
+      "model_mode": "mock",
+      "result_summary": "{\"ok\": true, \"analyzed_jobs\": 8, \"families\": [{\"family\": \"backend\", \"job_count\": 5, \"top_skills\": [\"Java\", \"MySQL\", \"SQL 编写与调优\", \"Redis\", \"并发与多线程\"]}, {\"family\":"
+    },
+    {
+      "seq": 6,
+      "trigger": "page",
+      "tool_name": "generate_plan",
+      "arguments": {},
+      "ok": true,
+      "at": "2026-10-30 23:27:28",
+      "model_mode": "mock",
+      "result_summary": "{\"ok\": true, \"plan_id\": \"PLAN-V1\", \"version\": 1, \"semesters\": 6, \"unallocated_count\": 1, \"diff\": {\"added\": [{\"activity_id\": \"A13\", \"semester\": \"第3学期\"}, {\"activi"
+    },
+    {
+      "seq": 7,
+      "trigger": "page",
+      "tool_name": "export_report",
+      "arguments": {},
+      "ok": true,
+      "at": "2026-10-30 23:27:28",
+      "model_mode": "mock",
+      "result_summary": "{\"ok\": true, \"filename\": \"成长报告_2026-10-30.md\"}"
+    },
+    {
+      "seq": 8,
+      "trigger": "page",
+      "tool_name": "get_state",
+      "arguments": {},
+      "ok": true,
+      "at": "2026-10-30 23:28:23",
+      "model_mode": "mock",
+      "result_summary": "{\"ok\": true, \"profile\": {\"major\": \"计算机科学与技术\", \"semester\": 3, \"target_family\": \"backend\", \"weekly_hours\": 8, \"path\": \"employment\", \"mastered_skills\": [\"python\", "
+    },
+    {
+      "seq": 9,
+      "trigger": "page",
+      "tool_name": "save_profile",
+      "arguments": {
+        "major": "计算机科学与技术",
+        "semester": 3,
+        "target_family": "backend",
+        "weekly_hours": 8,
+        "path": "employment",
+        "mastered_skills": [
+          "python",
+          "data_structure",
+          "git"
+        ],
+        "pending_skills": []
+      },
+      "ok": true,
+      "at": "2026-10-30 23:28:26",
+      "model_mode": "mock"
+    },
+    {
+      "seq": 10,
+      "trigger": "page",
+      "tool_name": "get_state",
+      "arguments": {},
+      "ok": true,
+      "at": "2026-10-30 23:28:26",
+      "model_mode": "mock",
+      "result_summary": "{\"ok\": true, \"profile\": {\"major\": \"计算机科学与技术\", \"semester\": 3, \"target_family\": \"backend\", \"weekly_hours\": 8, \"path\": \"employment\", \"mastered_skills\": [\"python\", "
+    },
+    {
+      "seq": 11,
+      "trigger": "page",
+      "tool_name": "generate_plan",
+      "arguments": {},
+      "ok": true,
+      "at": "2026-10-30 23:28:30",
+      "model_mode": "mock",
+      "result_summary": "{\"ok\": true, \"plan_id\": \"PLAN-V2\", \"version\": 2, \"semesters\": 6, \"unallocated_count\": 1, \"diff\": {\"added\": [], \"kept\": [{\"activity_id\": \"A13\", \"semester\": \"第3学期"
+    },
+    {
+      "seq": 12,
+      "trigger": "page",
+      "tool_name": "update_completion",
+      "arguments": {
+        "activity_id": "A02",
+        "evidence": ""
+      },
+      "ok": true,
+      "at": "2026-10-30 23:28:34",
+      "model_mode": "mock",
+      "result_summary": "{\"ok\": true, \"activity_id\": \"A02\", \"promoted_skills\": [\"java\", \"oop\", \"concurrency\", \"jvm\"], \"message\": \"完成情况已记录，覆盖能力已标记为已掌握并附证据，重规划时保留并计入可迁移能力\"}"
+    },
+    {
+      "seq": 13,
+      "trigger": "page",
+      "tool_name": "get_state",
+      "arguments": {},
+      "ok": true,
+      "at": "2026-10-30 23:28:34",
+      "model_mode": "mock",
+      "result_summary": "{\"ok\": true, \"profile\": {\"major\": \"计算机科学与技术\", \"semester\": 3, \"target_family\": \"backend\", \"weekly_hours\": 8, \"path\": \"employment\", \"mastered_skills\": [\"concurren"
+    },
+    {
+      "seq": 14,
+      "trigger": "page",
+      "tool_name": "update_completion",
+      "arguments": {
+        "activity_id": "A06",
+        "evidence": ""
+      },
+      "ok": true,
+      "at": "2026-10-30 23:28:34",
+      "model_mode": "mock",
+      "result_summary": "{\"ok\": true, \"activity_id\": \"A06\", \"promoted_skills\": [\"spring_boot\", \"restful\", \"unit_test\"], \"message\": \"完成情况已记录，覆盖能力已标记为已掌握并附证据，重规划时保留并计入可迁移能力\"}"
+    },
+    {
+      "seq": 15,
+      "trigger": "page",
+      "tool_name": "get_state",
+      "arguments": {},
+      "ok": true,
+      "at": "2026-10-30 23:28:34",
+      "model_mode": "mock",
+      "result_summary": "{\"ok\": true, \"profile\": {\"major\": \"计算机科学与技术\", \"semester\": 3, \"target_family\": \"backend\", \"weekly_hours\": 8, \"path\": \"employment\", \"mastered_skills\": [\"concurren"
+    },
+    {
+      "seq": 16,
+      "trigger": "page",
+      "tool_name": "adjust_conditions",
+      "arguments": {
+        "target_family": "backend"
+      },
+      "ok": true,
+      "at": "2026-10-30 23:28:40",
+      "model_mode": "mock",
+      "result_summary": "{\"ok\": true, \"version\": 3, \"diff\": {\"added\": [{\"activity_id\": \"A08\", \"semester\": 6}], \"kept\": [{\"activity_id\": \"A13\", \"semester\": \"第3学期\"}, {\"activity_id\": \"A03\""
+    },
+    {
+      "seq": 17,
+      "trigger": "page",
+      "tool_name": "get_state",
+      "arguments": {},
+      "ok": true,
+      "at": "2026-10-30 23:28:40",
+      "model_mode": "mock",
+      "result_summary": "{\"ok\": true, \"profile\": {\"major\": \"计算机科学与技术\", \"semester\": 3, \"target_family\": \"backend\", \"weekly_hours\": 8, \"path\": \"employment\", \"mastered_skills\": [\"concurren"
+    },
+    {
+      "seq": 18,
+      "trigger": "chat",
+      "tool_name": "generate_plan",
+      "arguments": {},
+      "ok": true,
+      "at": "2026-10-30 23:28:48",
+      "model_mode": "mock",
+      "result_summary": "{\"ok\": true, \"plan_id\": \"PLAN-V4\", \"version\": 4, \"semesters\": 6, \"unallocated_count\": 1, \"diff\": {\"added\": [], \"kept\": [{\"activity_id\": \"A13\", \"semester\": \"第3学期"
+    },
+    {
+      "seq": 19,
+      "trigger": "chat",
+      "tool_name": "analyze_jobs",
+      "arguments": {},
+      "ok": true,
+      "at": "2026-10-30 23:28:53",
+      "model_mode": "mock",
+      "result_summary": "{\"ok\": true, \"analyzed_jobs\": 8, \"families\": [{\"family\": \"backend\", \"job_count\": 5, \"top_skills\": [\"Java\", \"MySQL\", \"SQL 编写与调优\", \"Redis\", \"并发与多线程\"]}, {\"family\":"
+    },
+    {
+      "seq": 20,
+      "trigger": "chat",
+      "tool_name": "export_report",
+      "arguments": {},
+      "ok": true,
+      "at": "2026-10-30 23:28:55",
+      "model_mode": "mock",
+      "result_summary": "{\"ok\": true, \"filename\": \"成长报告_2026-10-30.md\"}"
+    },
+    {
+      "seq": 21,
+      "trigger": "page",
+      "tool_name": "export_report",
+      "arguments": {},
+      "ok": true,
+      "at": "2026-10-30 23:29:05",
+      "model_mode": "mock",
+      "result_summary": "{\"ok\": true, \"filename\": \"成长报告_2026-10-30.md\"}"
+    }
+  ]
+}
