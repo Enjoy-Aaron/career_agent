@@ -8,11 +8,13 @@
   "_comment": "复制本文件为 config.json 后修改。三种模式：mock 模拟（默认，无需密钥）/ local 本地模型 / cloud 云端模型。",
   "_local_example": {
     "mode": "local",
-    "model": "qwen2.5:7b",
-    "base_url": "http://127.0.0.1:11434/v1/chat/completions",
+    "model": "qwen2.5:3b",
+    "base_url": "http://127.0.0.1:11434/v1",
     "api_key": "",
-    "timeout_seconds": 90,
-    "fallback_to_mock": false
+    "timeout_seconds": 120,
+    "fallback_to_mock": false,
+    "extract_mode": "rule",
+    "_note": "本地部署开源千问（免费、离线）。需先安装 Ollama 并执行 ollama pull qwen2.5:3b。无独显/16GB 内存推荐 3b；配置更好可选 qwen2.5:7b 或 qwen3:4b。extract_mode=rule 表示招聘技能提取走规则匹配（快且稳），模型只负责对话理解与工具选择。"
   },
   "_cloud_example": {
     "mode": "cloud",
@@ -21,5 +23,15 @@
     "api_key": "sk-在这里填你的密钥",
     "timeout_seconds": 60,
     "fallback_to_mock": false
+  },
+  "_qwen_example": {
+    "mode": "cloud",
+    "model": "qwen-plus",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "api_key": "sk-在这里填你的百炼 API Key",
+    "timeout_seconds": 60,
+    "fallback_to_mock": true,
+    "_qwen_models": "可选模型：qwen-turbo（快/便宜）、qwen-plus（均衡）、qwen-max（最强）、qwen3-*（最新一代）",
+    "_get_key": "在阿里云百炼控制台 modelstudio.console.aliyun.com 申请 API Key（新用户有免费额度）"
   }
 }

@@ -278,22 +278,26 @@ def build_plan(profile: dict, gap: dict, activities_doc: dict,
     skill_available = set(mastered)
     # 持续性任务（recurring）：把总工时均摊到窗口内每个学期，逐学期投入
     recurring_alloc = _plan_recurring(ordered, done_acts, current)
+    recurring_ids = {alloc["activity_id"] for alloc in recurring_alloc}
 
     for sem in range(current, 9):
         fixed = fixed_by_semester.get(sem, [])
         fixed_hours = sum(x["workload_hours"] for x in fixed)
         remaining = semester_budget - fixed_hours
         scheduled = []
-        # 先放入持续性任务的当学期份额
+        # 先放入持续性任务的当学期份额（跨学期重复，不受 scheduled_set 限制，
+        # 只受窗口约束；每学期都投入一份直到窗口结束）
         for alloc in recurring_alloc:
-            if alloc["activity_id"] in scheduled_set or alloc["activity_id"] in done_acts:
+            if alloc["activity_id"] in done_acts:
+                continue
+            lo, hi = alloc["window"]
+            if not (lo <= sem <= hi):
                 continue
             share = alloc["per_semester"]
             if share <= remaining:
                 a = act_by_id[alloc["activity_id"]]
                 scheduled.append(_scheduled(a, share, "recurring"))
                 remaining -= share
-                scheduled_set.add(alloc["activity_id"])
         for a in ordered:
             aid = a["activity_id"]
             if aid in scheduled_set or aid in done_acts:
@@ -348,7 +352,7 @@ def build_plan(profile: dict, gap: dict, activities_doc: dict,
     unallocated = []
     for a in ordered:
         aid = a["activity_id"]
-        if aid in fixed_ids or aid in scheduled_set or aid in done_acts:
+        if aid in fixed_ids or aid in scheduled_set or aid in done_acts or aid in recurring_ids:
             continue
         unallocated.append({
             "activity_id": aid,
@@ -424,7 +428,8 @@ def _plan_recurring(ordered: list[dict], done: set, current: int) -> list[dict]:
             continue
         n_semesters = hi - start + 1
         per = round(a["workload_hours"] / n_semesters, 1)
-        out.append({"activity_id": a["activity_id"], "per_semester": per})
+        out.append({"activity_id": a["activity_id"], "per_semester": per,
+                    "window": [start, hi]})
     return out
 
 

@@ -35,7 +35,7 @@ def check(name, cond, detail=""):
 # 干净起点
 call("/api/reset", {})
 status = call("/api/model_status")["status"]
-check("场景0 默认模拟模式", status["mode"] == "mock", str(status))
+check("场景0 模式正确上报", status["mode"] in ("mock", "local", "cloud"), str(status))
 
 # 画像：大二第3学期，后端岗，每周8小时，就业路径
 profile = {

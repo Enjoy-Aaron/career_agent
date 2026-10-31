@@ -149,6 +149,20 @@
     </div>
     <div id="skill-chart" class="chart-scroll"></div>
   </div>
+  <div class="card hidden" id="category-card">
+    <div class="chart-head">
+      <h2>岗位能力结构（技能类别占比）</h2>
+      <p class="hint" style="margin:0">按技能类别统计该岗位族的招聘要求分布，看清「技术栈 vs 通用能力」的构成。</p>
+    </div>
+    <div id="category-chart" class="chart-center"></div>
+  </div>
+  <div class="card hidden" id="priority-card">
+    <div class="chart-head">
+      <h2>缺口优先级矩阵（先学什么）</h2>
+      <p class="hint" style="margin:0">横轴=被多少条招聘提及（越靠右越普遍），纵轴=硬性占比（越靠上越关键），气泡越大提及越频繁。右上角 = 最该优先补齐。</p>
+    </div>
+    <div id="priority-chart" class="chart-scroll"></div>
+  </div>
 </section>
 
 <!-- ========== 成长路线 ========== -->
@@ -172,6 +186,13 @@
       <p class="hint" style="margin:0">按学期铺开的整体规划，固定块（考研/保研）与暑期实习高亮显示。</p>
     </div>
     <div id="route-timeline" class="chart-scroll"></div>
+  </div>
+  <div class="card hidden" id="workload-card">
+    <div class="chart-head">
+      <h2>学期工作量堆叠图（时间分配）</h2>
+      <p class="hint" style="margin:0">每学期固定块（考研/保研）与常规学习/实习的工时构成，直观看出不同路径对时间分配的挤压。</p>
+    </div>
+    <div id="workload-chart" class="chart-scroll"></div>
   </div>
   <div id="plan-view"></div>
 </section>

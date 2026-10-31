@@ -20,6 +20,9 @@ DATA_DIR = os.path.join(BASE_DIR, "data")
 STATE_DIR = os.path.join(BASE_DIR, "state")
 WEB_DIR = os.path.join(BASE_DIR, "web")
 PORT = int(os.environ.get("CAREER_PORT", "8000"))
+# 绑定地址：默认仅本机可访问（安全）。设为 0.0.0.0 可让同一局域网内的
+# 其他设备访问（答辩演示场景），通过环境变量 CAREER_HOST 控制。
+HOST = os.environ.get("CAREER_HOST", "127.0.0.1")
 
 _MIME = {
     ".html": "text/html; charset=utf-8",
@@ -173,12 +176,15 @@ def _now() -> str:
 
 
 def main():
-    server = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
+    server = ThreadingHTTPServer((HOST, PORT), Handler)
     url = f"http://127.0.0.1:{PORT}/"
     print("=" * 60)
     print("岗位需求反推成长规划 Agent 已启动")
     print(f"模型模式：{AGENT.adapter.status()['mode']}（模拟模式无需密钥即可完整演示）")
-    print(f"访问地址：{url}")
+    print(f"本机访问：{url}")
+    if HOST in ("0.0.0.0", "::"):
+        print("已开启局域网访问：同一 WiFi 下其他设备可用下方地址访问")
+        _print_lan_urls(PORT)
     print("按 Ctrl+C 退出")
     print("=" * 60)
     if "--no-browser" not in sys.argv:
@@ -188,6 +194,26 @@ def main():
     except KeyboardInterrupt:
         print("\n正在退出...")
         server.shutdown()
+
+
+def _print_lan_urls(port: int) -> None:
+    """打印本机局域网 IPv4 地址，供同一网络下的设备访问。"""
+    try:
+        import socket
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        try:
+            s.connect(("8.8.8.8", 80))
+            ip = s.getsockname()[0]
+        except OSError:
+            ip = ""
+        finally:
+            s.close()
+        if ip:
+            print(f"  局域网地址：http://{ip}:{port}/")
+        else:
+            print("  （未能自动探测局域网 IP，可用 ipconfig 查看 IPv4 地址）")
+    except Exception:
+        pass
 
 
 if __name__ == "__main__":

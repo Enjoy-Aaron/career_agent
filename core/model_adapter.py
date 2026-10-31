@@ -52,6 +52,9 @@ class ModelAdapter:
         self._build_matchers()
         self.timeout = float(self.config.get("timeout_seconds", 60))
         self.fallback_to_mock = bool(self.config.get("fallback_to_mock", False))
+        # 招聘提取策略：rule=规则匹配（快且稳，本地小模型推荐）；model=模型提取
+        # （云端强模型推荐）。本地小模型 CPU 推理慢、JSON 稳定性差，默认走 rule。
+        self.extract_mode = self.config.get("extract_mode", "rule" if self.mode == "local" else "model")
 
     # ---------- 匹配器构建 ----------
     def _build_matchers(self) -> None:
@@ -81,9 +84,9 @@ class ModelAdapter:
     # ---------- 招聘提取 ----------
     def extract_job(self, raw_text: str, job_id: str) -> dict:
         """提取单条招聘要求，返回结构化字段（含原文证据）。"""
-        if self.is_mock:
+        if self.is_mock or self.extract_mode == "rule":
             candidates = self._rule_based_candidates(raw_text)
-            extracted_by = "mock"
+            extracted_by = "rule" if not self.is_mock else "mock"
         else:
             try:
                 candidates = self._model_based_candidates(raw_text)
@@ -92,7 +95,7 @@ class ModelAdapter:
                 if not self.fallback_to_mock:
                     raise
                 candidates = self._rule_based_candidates(raw_text)
-                extracted_by = "mock(fallback)"
+                extracted_by = "rule(fallback)"
         result = self._normalize(raw_text, candidates, job_id, extracted_by)
         return result
 
@@ -210,24 +213,34 @@ class ModelAdapter:
 
     # ---------- Agent 工具选择 ----------
     def select_tool(self, messages: list[dict], tools: list[dict]) -> dict:
-        """让模型选择工具，返回 {tool_name, arguments} 或 {final_answer}。"""
+        """让模型选择工具，返回 {tool_name, arguments} 或 {final_answer}。
+
+        支持模型返回单个或多个工具调用；多个调用时只取第一个（其余由
+        Agent 循环逐轮消费），避免一次性执行带来的不确定性。
+        """
         if self.is_mock:
             raise ModelError("模拟模式不调用模型选工具，应由 Agent 规则路由处理")
         resp = self._chat_raw(messages, tools=tools)
-        # 正常情况下 _chat_raw 已解析 tool_calls；这里 resp 为 message 字典
-        if resp.get("tool_calls"):
-            call = resp["tool_calls"][0]
-            fn = call.get("function", {})
-            try:
-                arguments = json.loads(fn.get("arguments", "{}"))
-            except json.JSONDecodeError:
-                raise ModelError("模型返回的工具参数不是合法 JSON")
-            return {"tool_name": fn.get("name", ""), "arguments": arguments}
-        return {"final_answer": resp.get("content", "")}
+        tool_calls = resp.get("tool_calls") or []
+        if tool_calls:
+            call = tool_calls[0]
+            fn = call.get("function", {}) or {}
+            raw_args = fn.get("arguments") or "{}"
+            if isinstance(raw_args, dict):
+                arguments = raw_args
+            else:
+                try:
+                    arguments = json.loads(raw_args)
+                except (json.JSONDecodeError, TypeError):
+                    raise ModelError("模型返回的工具参数不是合法 JSON")
+            return {"tool_name": fn.get("name", ""), "arguments": arguments or {}}
+        # 无工具调用：视为最终答复（content 可能为空，交给上层兜底）
+        return {"final_answer": resp.get("content") or ""}
 
     # ---------- 底层 HTTP（OpenAI 兼容） ----------
-    def _chat_raw(self, messages: list[dict], tools: list[dict] | None = None) -> dict:
-        url = self.config.get("base_url", "").rstrip("/")
+    def _chat_raw(self, messages: list[dict], tools: list[dict] | None = None,
+                  max_tokens: int | None = None) -> dict:
+        url = self._normalize_base_url(self.config.get("base_url", ""))
         if not url:
             raise ModelError("未配置 base_url（服务地址）")
         body: dict[str, Any] = {
@@ -235,6 +248,8 @@ class ModelAdapter:
             "messages": messages,
             "temperature": 0.1,
         }
+        if max_tokens:
+            body["max_tokens"] = max_tokens
         if tools:
             body["tools"] = tools
             body["tool_choice"] = "auto"
@@ -255,9 +270,34 @@ class ModelAdapter:
         except (TimeoutError, json.JSONDecodeError) as e:
             raise ModelError(f"模型响应异常：{e}") from e
         try:
-            return data["choices"][0]["message"]
+            message = data["choices"][0]["message"]
         except (KeyError, IndexError) as e:
             raise ModelError(f"模型返回缺少 choices[0].message：{str(data)[:200]}") from e
+        # 归一化 tool_calls：确保每个 function.arguments 为字符串（部分兼容
+        # 实现会直接返回 dict），并补全缺失的 id 字段
+        for tc in message.get("tool_calls") or []:
+            fn = tc.get("function") or {}
+            if isinstance(fn.get("arguments"), dict):
+                fn["arguments"] = json.dumps(fn["arguments"], ensure_ascii=False)
+            if "id" not in tc:
+                tc["id"] = f"call_{id(tc)}"
+        return message
+
+    @staticmethod
+    def _normalize_base_url(url: str) -> str:
+        """把用户填的 base_url 归一为完整的 chat/completions 端点。
+
+        兼容多种写法：
+          - https://dashscope.aliyuncs.com/compatible-mode/v1
+          - .../v1/chat/completions
+          - http://127.0.0.1:11434/v1
+        """
+        url = (url or "").strip().rstrip("/")
+        if not url:
+            return ""
+        if url.endswith("/chat/completions"):
+            return url
+        return url + "/chat/completions"
 
     @staticmethod
     def _parse_json_block(text: str) -> dict:

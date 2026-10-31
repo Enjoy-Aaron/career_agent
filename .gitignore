@@ -1,0 +1,12 @@
+# 密钥与本地配置（绝不提交）
+config.json
+
+# Python
+__pycache__/
+*.pyc
+
+# 运行时状态（用户个人数据）
+state/
+
+# 系统
+.DS_Store

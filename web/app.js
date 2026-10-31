@@ -67,8 +67,12 @@ async function init() {
 function renderModelBadge() {
   const st = STATE.model_status || { mode: "mock" };
   const badge = $("#model-badge");
-  badge.textContent = st.mode === "mock" ? "模拟模式（无需密钥）"
-    : st.mode === "local" ? "本地模型模式" : "云端模型模式";
+  const modelName = st.model || "";
+  let label = st.mode === "mock" ? "模拟模式（无需密钥）"
+    : st.mode === "local" ? "本地模型：" + (modelName || "未配置")
+    : "云端模型：" + (modelName || "未配置");
+  badge.textContent = label;
+  badge.title = "当前模型模式：" + st.mode + (modelName ? "，模型：" + modelName : "");
   badge.className = "badge badge-" + st.mode;
 }
 
@@ -242,6 +246,7 @@ function renderAnalysis(agg) {
     $("#ev-" + t.dataset.idx).classList.toggle("hidden");
   }));
   renderSkillChart(agg);
+  renderCategoryDonut(agg);
 }
 
 // ============ 可视化：技能频次对比图（纯 SVG 双色横向条形） ============
@@ -276,48 +281,61 @@ function renderSkillChart(agg) {
 
 // ============ 可视化：能力差距雷达图 ============
 function renderGapChart(gap, mastered) {
-  if (!gap || !gap.required_gaps || !gap.required_gaps.length) return;
-  const req = gap.required_gaps;
-  // 取硬性缺口前 N 项作为雷达维度，掌握状态用 mastered 集合判断
-  const dims = req.slice(0, 6).map((s) => s.skill_id);
-  const labels = req.slice(0, 6).map((s) => s.name);
+  if (!gap || !gap.job_count) return;
+  const masterSet = new Set(mastered || []);
+  const req = gap.required_gaps || [];
+  const bonus = gap.bonus_gaps || [];
+  // 维度：硬性缺口（按 required_count 排序）+ 目标族内已掌握技能（按岗位提及排序）
+  // 这样既能看出"还缺什么"，也能对比"已掌握了哪些岗位要求的能力"
+  const masteredInTarget = (gap.mastered_in_target || [])
+    .map((sid) => {
+      const s = [...req, ...bonus].find((x) => x.skill_id === sid);
+      return s || { skill_id: sid, name: sid, category: "soft_skill", required_count: 0, bonus_count: 0 };
+    })
+    .sort((a, b) => (b.required_count + b.bonus_count) - (a.required_count + a.bonus_count));
+  const reqSorted = req.slice().sort((a, b) => b.required_count - a.required_count);
+  // 合并去重：优先硬性缺口，再补已掌握（最多 8 维，避免雷达图过密）
+  const seen = new Set();
+  const dimsArr = [];
+  for (const s of [...reqSorted, ...masteredInTarget]) {
+    if (seen.has(s.skill_id) || dimsArr.length >= 8) continue;
+    seen.add(s.skill_id);
+    dimsArr.push(s);
+  }
+  if (!dimsArr.length) return;
+  const n = dimsArr.length;
   const total = gap.job_count || 1;
-  const cx = 200, cy = 190, R = 130;
-  const n = dims.length;
+  const cx = 220, cy = 200, R = 140;
   const angle = (i) => (Math.PI * 2 * i) / n - Math.PI / 2;
   const pt = (i, r) => [cx + Math.cos(angle(i)) * r, cy + Math.sin(angle(i)) * r];
-  const masterSet = new Set(mastered || []);
-  // 岗位要求强度 = required_count / total
-  const reqVal = dims.map((d) => {
-    const s = req.find((x) => x.skill_id === d);
-    return s ? s.required_count / total : 0;
-  });
-  const myVal = dims.map((d) => (masterSet.has(d) ? 1 : 0));
-  const poly = (vals) => vals.map((v, i) => pt(i, v * R).join(",")).join(" ");
+  // 岗位要求强度 = required_count / total（已掌握的技能按其在岗位中的要求强度展示）
+  const reqVal = dimsArr.map((s) => Math.min(1, (s.required_count || 0) / total));
+  const myVal = dimsArr.map((s) => (masterSet.has(s.skill_id) ? 1 : 0));
+  const poly = (vals) => vals.map((v, i) => pt(i, Math.max(0.02, v) * R).join(",")).join(" ");
   // 网格环
   let grid = "";
   for (let g = 1; g <= 4; g++) {
     const r = (R * g) / 4;
-    grid += `<polygon points="${dims.map((_, i) => pt(i, r).join(",")).join(" ")}" class="radar-grid"></polygon>`;
+    grid += `<polygon points="${dimsArr.map((_, i) => pt(i, r).join(",")).join(" ")}" class="radar-grid"></polygon>`;
   }
   let axes = "";
-  dims.forEach((_, i) => {
+  dimsArr.forEach((_, i) => {
     const [x, y] = pt(i, R);
     axes += `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" class="radar-axis"></line>`;
   });
   let labs = "";
-  dims.forEach((d, i) => {
-    const [x, y] = pt(i, R + 24);
-    const anchor = x < cx - 5 ? "end" : x > cx + 5 ? "start" : "middle";
-    labs += `<text x="${x}" y="${y}" text-anchor="${anchor}" class="radar-label">${esc(labels[i])}</text>`;
+  dimsArr.forEach((s, i) => {
+    const [x, y] = pt(i, R + 26);
+    const anchor = x < cx - 6 ? "end" : x > cx + 6 ? "start" : "middle";
+    labs += `<text x="${x}" y="${y}" text-anchor="${anchor}" class="radar-label">${esc(s.name)}</text>`;
   });
-  const dots = dims.map((_, i) => {
+  const dots = dimsArr.map((s, i) => {
     const [x, y] = pt(i, myVal[i] * R);
     return `<circle cx="${x}" cy="${y}" r="3.5" class="radar-dot"></circle>`;
   }).join("");
   $("#gap-chart-card").classList.remove("hidden");
   $("#gap-chart").innerHTML = `
-    <svg viewBox="0 0 400 380" width="100%" style="max-width:400px" role="img">
+    <svg viewBox="0 0 440 400" width="100%" style="max-width:440px" role="img">
       ${grid}${axes}
       <polygon points="${poly(reqVal)}" class="radar-req"></polygon>
       <polygon points="${poly(myVal)}" class="radar-mine"></polygon>
@@ -326,6 +344,166 @@ function renderGapChart(gap, mastered) {
     <div class="radar-legend">
       <span><i class="dot dot-req"></i>岗位核心要求强度</span>
       <span><i class="dot dot-mine"></i>你已掌握</span>
+    </div>`;
+}
+
+// ============ 可视化：岗位能力结构环形图（技能类别占比） ============
+function renderCategoryDonut(agg) {
+  if (!agg || !agg.families || !agg.families.length) return;
+  const fam = agg.families[0];
+  const skills = fam.skills || [];
+  if (!skills.length) return;
+  const catCount = {};
+  const catColors = {
+    language: "#146356", backend_framework: "#2f6f8f", data_storage: "#cf8427",
+    cs_foundation: "#b14a3c", devops: "#7a5c9e", ai: "#d97706", soft_skill: "#64748b",
+  };
+  skills.forEach((s) => {
+    catCount[s.category] = (catCount[s.category] || 0) + (s.required_count + s.bonus_count);
+  });
+  const entries = Object.entries(catCount).filter(([, v]) => v > 0)
+    .sort((a, b) => b[1] - a[1]);
+  const total = entries.reduce((s, [, v]) => s + v, 0) || 1;
+  const cx = 140, cy = 140, r = 100, stroke = 40;
+  const C = 2 * Math.PI * (r - stroke / 2);
+  let offset = 0;
+  let segs = "";
+  entries.forEach(([cat, v]) => {
+    const frac = v / total;
+    const len = frac * C;
+    const dash = `${len} ${C - len}`;
+    segs += `<circle cx="${cx}" cy="${cy}" r="${r - stroke / 2}" fill="none"
+      stroke="${catColors[cat] || "#999"}" stroke-width="${stroke}"
+      stroke-dasharray="${dash}" stroke-dashoffset="${-offset}"
+      transform="rotate(-90 ${cx} ${cy})">
+      <title>${esc(CATEGORY_NAMES[cat] || cat)}：${v} 次提及</title></circle>`;
+    offset += len;
+  });
+  // 中心文字
+  const center = `<text x="${cx}" y="${cy - 8}" text-anchor="middle" class="donut-total">${total}</text>
+    <text x="${cx}" y="${cy + 14}" text-anchor="middle" class="donut-sub">次技能提及</text>`;
+  // 图例
+  const legend = entries.map(([cat, v]) => `
+    <span><i class="dot" style="background:${catColors[cat] || "#999"}"></i>
+      ${esc(CATEGORY_NAMES[cat] || cat)} · ${v}（${Math.round(v / total * 100)}%）</span>`).join("");
+  $("#category-card").classList.remove("hidden");
+  $("#category-chart").innerHTML = `
+    <svg viewBox="0 0 280 280" width="100%" style="max-width:280px" role="img">${segs}${center}</svg>
+    <div class="donut-legend">${legend}</div>`;
+}
+
+// ============ 可视化：缺口优先级矩阵（先学什么） ============
+function renderPriorityMatrix(gap) {
+  if (!gap || !gap.job_count) return;
+  const req = gap.required_gaps || [];
+  const bonus = gap.bonus_gaps || [];
+  const all = [...req, ...bonus];
+  if (!all.length) return;
+  const total = gap.job_count || 1;
+  // 横轴：提及频次(0~1)；纵轴：硬性占比(required/mention, 0~1)
+  const W = 760, H = 380, padL = 56, padR = 20, padT = 20, padB = 44;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+  const pts = all.map((s) => {
+    const mention = s.required_count + s.bonus_count;
+    const freq = mention / total;
+    const hardRatio = mention ? s.required_count / mention : 0;
+    return { s, freq, hardRatio, mention };
+  });
+  const x = (freq) => padL + freq * plotW;
+  const y = (hr) => padT + (1 - hr) * plotH;
+  // 网格 + 轴刻度
+  let grid = "";
+  for (let i = 0; i <= 4; i++) {
+    const gx = padL + (i / 4) * plotW;
+    const gy = padT + (i / 4) * plotH;
+    grid += `<line x1="${gx}" y1="${padT}" x2="${gx}" y2="${padT + plotH}" class="radar-axis"></line>`;
+    grid += `<line x1="${padL}" y1="${gy}" x2="${padL + plotW}" y2="${gy}" class="radar-axis"></line>`;
+    grid += `<text x="${gx}" y="${H - padB + 18}" text-anchor="middle" class="axis-tick">${(i * 25)}%</text>`;
+    grid += `<text x="${padL - 8}" y="${gy + 4}" text-anchor="end" class="axis-tick">${(100 - i * 25)}%</text>`;
+  }
+  // 象限辅助线（中点）
+  grid += `<line x1="${padL + plotW / 2}" y1="${padT}" x2="${padL + plotW / 2}" y2="${padT + plotH}" class="quad-line"></line>`;
+  grid += `<line x1="${padL}" y1="${padT + plotH / 2}" x2="${padL + plotW}" y2="${padT + plotH / 2}" class="quad-line"></line>`;
+  // 象限标注
+  const qLabels = [
+    { x: padL + plotW * 0.75, y: padT + 18, t: "核心必修（优先补齐）", cls: "q-hot" },
+    { x: padL + plotW * 0.25, y: padT + 18, t: "常见但非硬性", cls: "q-warm" },
+    { x: padL + plotW * 0.25, y: padT + plotH - 8, t: "长尾/可选", cls: "q-cool" },
+    { x: padL + plotW * 0.75, y: padT + plotH - 8, t: "关键但少见", cls: "q-niche" },
+  ];
+  const qs = qLabels.map((q) => `<text x="${q.x}" y="${q.y}" text-anchor="middle" class="${q.cls}">${q.t}</text>`).join("");
+  // 气泡：半径随 mention 频次
+  const bubbles = pts.map((p) => {
+    const r = 6 + Math.min(16, p.mention * 6);
+    const isGap = !(gap.mastered_in_target || []).includes(p.s.skill_id) && p.s.required_count > 0;
+    const fill = isGap ? "var(--red)" : "var(--green)";
+    const cx = x(p.freq), cy = y(p.hardRatio);
+    return `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${fill}" opacity="0.55" stroke="${fill}" stroke-width="1">
+        <title>${esc(p.s.name)}：${p.mention} 条提及，硬性 ${p.s.required_count} / 加分 ${p.s.bonus_count}</title></circle>
+      <text x="${cx}" y="${cy + 3}" text-anchor="middle" class="bubble-txt">${esc(p.s.skill_id.length > 8 ? p.s.skill_id.slice(0, 7) + "…" : p.s.skill_id)}</text>`;
+  }).join("");
+  $("#priority-card").classList.remove("hidden");
+  $("#priority-chart").innerHTML = `
+    <svg viewBox="0 0 ${W} ${H}" width="100%" style="min-width:${W}px" role="img">
+      ${grid}${qs}${bubbles}
+      <text x="${padL}" y="${H - padB + 36}" class="axis-label">← 提及频率低　　　　提及频率高 →</text>
+      <text x="14" y="${padT + plotH / 2}" transform="rotate(-90 14 ${padT + plotH / 2})" text-anchor="middle" class="axis-label">硬性占比</text>
+    </svg>
+    <div class="radar-legend">
+      <span><i class="dot" style="background:var(--red)"></i>硬性缺口（待补）</span>
+      <span><i class="dot" style="background:var(--green)"></i>已掌握</span>
+      <span class="hint">气泡越大 = 被越多招聘提及</span>
+    </div>`;
+}
+
+// ============ 可视化：学期工作量堆叠图 ============
+function renderWorkloadChart(plan) {
+  if (!plan || !plan.semester_plans || !plan.semester_plans.length) return;
+  const sems = plan.semester_plans;
+  const W = 760, padL = 56, padR = 20, padT = 20, padB = 44;
+  const plotW = W - padL - padR, plotH = 240;
+  const colGap = 10;
+  const colW = Math.floor((plotW - colGap * (sems.length - 1)) / sems.length);
+  const maxBudget = Math.max(1, ...sems.map((s) => s.budget_hours));
+  const y = (h) => padT + plotH - (h / maxBudget) * plotH;
+  let cols = "", grid = "";
+  // 横向网格（每 25% 预算）
+  for (let i = 0; i <= 4; i++) {
+    const gy = padT + (i / 4) * plotH;
+    const val = Math.round(maxBudget * (1 - i / 4));
+    grid += `<line x1="${padL}" y1="${gy}" x2="${padL + plotW}" y2="${gy}" class="radar-axis"></line>
+      <text x="${padL - 8}" y="${gy + 4}" text-anchor="end" class="axis-tick">${val}h</text>`;
+  }
+  sems.forEach((sp, i) => {
+    const x = padL + i * (colW + colGap);
+    const fixed = sp.fixed.reduce((s, it) => s + it.workload_hours, 0);
+    const reg = sp.scheduled.filter((it) => it.status !== "recurring").reduce((s, it) => s + it.workload_hours, 0);
+    const rec = sp.scheduled.filter((it) => it.status === "recurring").reduce((s, it) => s + it.workload_hours, 0);
+    const yF = y(fixed), yR = y(fixed + reg), yRec = y(fixed + reg + rec);
+    const yTop = y(fixed + reg + rec);
+    // 三段堆叠：固定块(amber) / 常规(green) / 持续(teal)
+    const segs = `
+      <rect x="${x}" y="${yTop}" width="${colW}" height="${yF - yTop}" fill="#cf8427" rx="3"><title>固定块 ${fixed}h</title></rect>
+      <rect x="${x}" y="${yR}" width="${colW}" height="${yRec - yR}" fill="#146356" rx="3"><title>常规 ${reg}h</title></rect>
+      <rect x="${x}" y="${yF}" width="${colW}" height="${yR - yF}" fill="#2f9e8f" rx="3"><title>持续投入 ${rec}h</title></rect>`;
+    // 预算虚线标记
+    const yB = y(sp.budget_hours);
+    const marker = `<line x1="${x}" y1="${yB}" x2="${x + colW}" y2="${yB}" class="budget-line"></line>`;
+    cols += `
+      ${marker}${segs}
+      <text x="${x + colW / 2}" y="${padT + plotH + 16}" text-anchor="middle" class="axis-tick">第${sp.semester}学期</text>
+      <text x="${x + colW / 2}" y="${yTop - 5}" text-anchor="middle" class="stack-total">${Math.round(fixed + reg + rec)}h</text>`;
+  });
+  $("#workload-card").classList.remove("hidden");
+  $("#workload-chart").innerHTML = `
+    <svg viewBox="0 0 ${W} ${padT + plotH + padB}" width="100%" style="min-width:${W}px" role="img">
+      ${grid}${cols}
+    </svg>
+    <div class="radar-legend">
+      <span><i class="dot" style="background:#cf8427"></i>固定块（考研/保研）</span>
+      <span><i class="dot" style="background:#146356"></i>常规学习/项目</span>
+      <span><i class="dot" style="background:#2f9e8f"></i>持续投入（刷题/英语）</span>
+      <span><i class="dot" style="background:transparent;border:1px dashed #b14a3c"></i>预算线</span>
     </div>`;
 }
 
@@ -438,13 +616,17 @@ function renderPlan(plan) {
   renderCharts(plan);
 }
 
-// 渲染成长路线配套图表（雷达图 + 时间轴）
+// 渲染成长路线配套图表（雷达图 + 时间轴 + 工作量堆叠）
 async function renderCharts(plan) {
   try {
     const profile = STATE.profile || {};
     renderRouteTimeline(plan, profile);
+    renderWorkloadChart(plan);
     const g = await api("/api/tool/get_gap", {});
-    if (g.ok) renderGapChart(g.gap, profile.mastered_skills || []);
+    if (g.ok) {
+      renderGapChart(g.gap, profile.mastered_skills || []);
+      renderPriorityMatrix(g.gap);
+    }
   } catch (e) { /* 图表失败不影响主体内容 */ }
 }
 
@@ -521,7 +703,21 @@ async function sendChat() {
   if (!text) return;
   addMsg("user", text);
   input.value = "";
-  const r = await api("/api/chat", { message: text });
+  const btn = $("#btn-chat-send");
+  btn.disabled = true;
+  // 加载提示：本地模型 CPU 推理较慢，避免用户误以为卡死
+  const thinking = document.createElement("div");
+  thinking.className = "msg msg-agent thinking";
+  thinking.textContent = "Agent 正在思考…";
+  $("#chat-box").appendChild(thinking);
+  $("#chat-box").scrollTop = $("#chat-box").scrollHeight;
+  let r;
+  try {
+    r = await api("/api/chat", { message: text });
+  } finally {
+    thinking.remove();
+    btn.disabled = false;
+  }
   const trace = (r.trace || []).map((t) => `[${t.step}] ${t.tool_name} ${t.ok ? "✓" : "✗" + (t.error ? "（" + t.error + "）" : "")}`).join("\n");
   addMsg("agent", r.answer + (trace ? "\n\n工具链：\n" + trace : ""), !r.ok);
   loadRecords();

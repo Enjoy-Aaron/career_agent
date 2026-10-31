@@ -2,7 +2,7 @@
   "extractions": [
     {
       "job_id": "J001",
-      "extracted_by": "mock",
+      "extracted_by": "rule",
       "skills": [
         {
           "skill_id": "concurrency",
@@ -99,7 +99,7 @@
     },
     {
       "job_id": "J002",
-      "extracted_by": "mock",
+      "extracted_by": "rule",
       "skills": [
         {
           "skill_id": "llm",
@@ -331,7 +331,7 @@
     },
     {
       "job_id": "J003",
-      "extracted_by": "mock",
+      "extracted_by": "rule",
       "skills": [
         {
           "skill_id": "microservice",
@@ -455,7 +455,7 @@
     },
     {
       "job_id": "J004",
-      "extracted_by": "mock",
+      "extracted_by": "rule",
       "skills": [
         {
           "skill_id": "restful",
@@ -578,7 +578,7 @@
     },
     {
       "job_id": "J005",
-      "extracted_by": "mock",
+      "extracted_by": "rule",
       "skills": [
         {
           "skill_id": "microservice",
@@ -796,7 +796,7 @@
     },
     {
       "job_id": "J006",
-      "extracted_by": "mock",
+      "extracted_by": "rule",
       "skills": [
         {
           "skill_id": "deep_learning",
@@ -959,7 +959,7 @@
     },
     {
       "job_id": "J007",
-      "extracted_by": "mock",
+      "extracted_by": "rule",
       "skills": [
         {
           "skill_id": "computer_vision",
@@ -1083,7 +1083,7 @@
     },
     {
       "job_id": "J008",
-      "extracted_by": "mock",
+      "extracted_by": "rule",
       "skills": [
         {
           "skill_id": "computer_vision",
@@ -2940,13 +2940,13 @@
         ]
       }
     ],
-    "generated_at": "2026-10-30 23:28:53"
+    "generated_at": "2026-10-31 09:37:05"
   },
-  "analyzed_at": "2026-10-30 23:28:53",
+  "analyzed_at": "2026-10-31 09:37:05",
   "mode_status": {
-    "mode": "mock",
-    "model": "mock-rules",
-    "base_url": "",
-    "is_mock": true
+    "mode": "local",
+    "model": "qwen2.5:1.5b",
+    "base_url": "http://127.0.0.1:11434/v1",
+    "is_mock": false
   }
 }

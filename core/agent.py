@@ -20,9 +20,14 @@ from .tools import BusinessTools, TOOL_DESCRIPTIONS
 MAX_STEPS = 8
 
 _SYSTEM_PROMPT = (
-    "你是“岗位需求反推成长规划 Agent”，服务一名大学生。你只能通过白名单工具获取和处理数据，"
-    "不能编造招聘要求、课程或活动。需要事实数据时先调用对应工具；工具返回错误时向用户说明并给出处理入口。"
-    "技能频次仅作优先级参考、不等于硬门槛；没有证据的能力标注待评估。完成用户目标后用简洁中文总结。"
+    "你是“岗位需求反推成长规划 Agent”，服务一名大学生规划大学四年的技术成长。"
+    "你只能通过提供的白名单工具获取和处理数据，不能编造招聘要求、课程或活动。"
+    "处理用户请求时，先判断需要调用哪些工具，按顺序逐个调用；"
+    "每个工具调用前确保前置数据已就绪（例如：生成计划前需先完成招聘分析与建档，"
+    "导出报告前需已有画像、招聘分析和成长计划）。"
+    "工具返回错误时，用通俗语言向用户说明原因并给出下一步操作建议，不要重复调用同一个失败工具。"
+    "技能频次仅作优先级参考、不等于硬门槛；没有证据的能力标注为待评估。"
+    "所有工具都执行完毕后，用简洁的中文总结已完成的工作和结果。"
 )
 
 # 模拟模式意图路由（关键词 → 工具）
@@ -79,25 +84,37 @@ class CareerAgent:
                     {"role": "user", "content": user_message}]
         steps = 0
         trace = []
+        # 本地/云端模型模式下的确定性兜底：若首条消息命中明确指令，直接走规则
+        # 路由，跳过模型的多轮工具调用往返（本地小模型在 CPU 上往返一次数十秒，
+        # 会导致“发出去没反应”）。未命中时才交给模型做真正的自然语言理解。
+        rule_fallback = (not self.adapter.is_mock) and self._intents(user_message)
         try:
             while steps < MAX_STEPS:
                 steps += 1
-                if self.adapter.is_mock:
+                if self.adapter.is_mock or rule_fallback:
                     decision = self._route_by_rules(user_message if steps == 1 else trace)
                 else:
                     decision = self.adapter.select_tool(messages, TOOL_DESCRIPTIONS)
                 if "final_answer" in decision:
-                    return {"ok": True, "answer": decision["final_answer"], "trace": trace}
+                    answer = decision["final_answer"]
+                    if not answer and trace:
+                        # 模型未给出文字总结但已执行工具：给出确定性兜底总结
+                        answer = self._mock_summary(user_message, trace)
+                    return {"ok": True, "answer": answer, "trace": trace}
                 tool_name = decision["tool_name"]
                 args = decision.get("arguments", {})
                 result = self.run_tool(tool_name, args, trigger="chat")
                 trace.append({"step": steps, "tool_name": tool_name, "ok": result.get("ok"),
                               "error": result.get("error") or result.get("message") or ""})
+                # 构造规范的工具调用消息（OpenAI 兼容协议要求 assistant 的
+                # tool_calls 与随后的 tool 消息通过 id 对应）
+                call_id = f"call_{steps}_{tool_name}"
                 messages.append({"role": "assistant", "content": None,
-                                 "tool_calls": [{"function": {"name": tool_name,
+                                 "tool_calls": [{"id": call_id, "type": "function",
+                                                 "function": {"name": tool_name,
                                                               "arguments": _json(args)}}]})
-                messages.append({"role": "tool", "name": tool_name,
-                                 "content": _json(result)})
+                messages.append({"role": "tool", "tool_call_id": call_id,
+                                 "name": tool_name, "content": _json(result)})
                 if not result.get("ok"):
                     detail = result.get("error") or result.get("message") or "未知错误"
                     return {"ok": False, "answer": "工具执行出错：" + _json(detail),
@@ -131,11 +148,13 @@ class CareerAgent:
             return {"tool_name": intents[0], "arguments": {}}
         if getattr(self, "_mock_queue", None):
             return {"tool_name": self._mock_queue.pop(0), "arguments": {}}
-        return {"final_answer": "已完成。"}
+        return {"final_answer": ""}
 
     def _mock_summary(self, message: str, trace: list[dict]) -> str:
         tools_used = "、".join(t["tool_name"] for t in trace)
-        return f"[模拟模式] 已按规则路由完成：{tools_used}。切换为本地/云端模型后，工具选择由模型完成，但归一、计数、工时与校验仍由程序执行。"
+        if self.adapter.is_mock:
+            return f"[模拟模式] 已按规则路由完成：{tools_used}。切换为本地/云端模型后，工具选择由模型完成，但归一、计数、工时与校验仍由程序执行。"
+        return f"已完成：{tools_used}。核心计算（招聘归一、能力缺口、工时排程与规则校验）均由程序确定性执行，结果可复核。"
 
 
 # ---------- 工具函数 ----------
